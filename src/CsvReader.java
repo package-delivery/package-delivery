@@ -1,34 +1,53 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
-public class CsvReader {
+public abstract class CsvReader {
 
-    public static void main(String[] args) {
-        ArrayList<ArrayList<String>> arList = new ArrayList<ArrayList<String>>();
-        try {
-            String[] lines = Files.readString(Paths.get("TSP.csv")).split("\n");
-            String[] cities = lines[0].split(",");
+    private static double[][] distanceMatrix;
+    private static City [] cityMatrix;
+    
+    public static City[] getCityMatrix(){
+        return cityMatrix;
+    }
 
-            ArrayList<ArrayList<Double>> matrix = new ArrayList<ArrayList<Double>>();
-            ArrayList<Double> buffer = new ArrayList<>();
-            for (int i = 1; i < lines.length; i++) {
-                String[] line = lines[i].split(",");
-                for (int x = 1; x < line.length; x++) buffer.add(Double.parseDouble(line[x]));
-                matrix.add(new ArrayList<Double>(buffer));
-                buffer.clear();
+    public static double[][] getDistanceMatrix(){
+        return distanceMatrix;
+    }
+
+    public static boolean readCsvFile(String filename){
+
+        try{
+            //Reads values of CSV file and splits the lines into own parts in array
+            String[] lines = Files.readString(Paths.get(filename)).split("\n");
+
+            //initializes City array
+            cityMatrix = new City[lines.length];
+            int counter = 0;
+            //for each city in csv file, a city gets created with
+            //its name and counter as the id and added to the city matrix
+            for (String s:lines[0].split(",")){
+                cityMatrix[counter] = new City(s, counter);
+                counter++;
             }
-            for (int i = 0; i < matrix.size(); i++) {
-                for (int x = 0; x < matrix.size(); x++) {
-                    System.out.print(matrix.get(x).get(i)+" ");
+
+            //distance matrix gets initialized
+            distanceMatrix = new double[lines.length][lines.length];
+            //nested for loops to parse values from
+            //csv file onto distance matrix
+            for (int i = 1; i < lines.length; i++){
+                String [] buffer = lines[i].split(",");
+                for (int j = 1; j < buffer.length; j++){
+                    distanceMatrix[i][j] = Double.parseDouble(buffer[j]);
                 }
-                System.out.println();
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(0);
         }
+        //catches file not found exception
+        //and returns false if not found
+        catch (IOException e) {
+            return false;
+        }
+        //returns true if file is found
+        return true;
     }
 }
