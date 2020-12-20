@@ -1,5 +1,7 @@
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public abstract class CsvReader {
@@ -19,7 +21,7 @@ public abstract class CsvReader {
 
         try{
             //Reads values of CSV file and splits the lines into own parts in array
-            String[] lines = Files.readString(Paths.get(filename)).split("\n");
+            String[] lines = Files.readString(Paths.get("files/" + filename)).split("\n");
 
             //initializes City array
             cityMatrix = new City[lines.length];
@@ -41,13 +43,14 @@ public abstract class CsvReader {
                     distanceMatrix[i][j] = Double.parseDouble(buffer[j]);
                 }
             }
+            return true;
         }
         //catches file not found exception
         //and returns false if not found
-        catch (IOException e) {
+        catch(IOException e) {
+            System.err.println("Error");
             return false;
         }
-        //returns true if file is found
-        return true;
+
     }
 }

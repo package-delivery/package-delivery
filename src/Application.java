@@ -2,13 +2,14 @@ import java.util.Optional;
 
 public class Application {
     public static void main(String[] args) {
-        Console.getFilename();
+        String filename = Console.getFilename();
+        System.out.println(CsvReader.readCsvFile(filename));
 
-        Optional<AlgorithmName> algo = Console.getSelectedAlgorithm();
-        if(algo.isEmpty()) {
+        Optional<AlgorithmName> algoName = Console.getSelectedAlgorithm();
+        if(algoName.isEmpty()) {
             System.err.println("No Algorithm found");
         }else{
-            switch(algo.get()) {
+            switch(algoName.get()) {
                 case NEAREST_NEIGHBOR:
                     NearestNeighbor nn = new NearestNeighbor();
                     nn.getResult().toString();

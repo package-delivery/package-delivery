@@ -28,4 +28,13 @@ public class Cities {
     public void setSortedCities(ArrayList<City> sortedCities) {
         this.sortedCities = sortedCities;
     }
+
+    @Override
+    public String toString() {
+        return "Cities{" +
+                "distance=" + distance +
+                ", time=" + time +
+                ", sortedCities=" + sortedCities +
+                '}';
+    }
 }

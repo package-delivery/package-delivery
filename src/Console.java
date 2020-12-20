@@ -9,11 +9,11 @@ public abstract class Console {
         System.out.println("[3] Convex Hull");
         Scanner s = new Scanner(System.in);
         String input = s.nextLine();
-        if(input == "1"){
+        if(input.equals("1")){
             return Optional.of(AlgorithmName.NEAREST_NEIGHBOR);
-        }else if(input == "2") {
+        }else if(input.equals("2")) {
             return Optional.of(AlgorithmName.BRUTE_FORCE);
-        }else if(input == "3") {
+        }else if(input.equals("3")) {
             return Optional.of(AlgorithmName.CONVEX_HULL);
         }else {
             return Optional.empty();
