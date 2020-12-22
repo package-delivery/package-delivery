@@ -1,4 +1,4 @@
-import java.util.*;
+package com.packagedelivery;
 
 public class BruteForce implements Algorithm{
 
@@ -26,10 +26,6 @@ public class BruteForce implements Algorithm{
         for(int i = 0; i < citiesArray.length - 1; i++){
             distance += CsvReader.getDistanceMatrix()[citiesArray[i].getId()][citiesArray[i + 1].getId()];
         }
-
-
-
-        
 
         return testCity;
 

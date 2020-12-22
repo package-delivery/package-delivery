@@ -1,12 +1,14 @@
+package com.packagedelivery;
+
 import java.util.ArrayList;
 
 public class NearestNeighbor implements Algorithm{
-
+    private double distance;
     private ArrayList<Integer> path;
-
+    private Cities sortedCities = new Cities();
 
     public NearestNeighbor(String start) {
-        // get City array and adjazenzmatrix
+        // get com.project.City array and adjazenzmatrix
         double[][] matrix = CsvReader.getDistanceMatrix();
         City[] cities = CsvReader.getCityMatrix();
 
@@ -23,14 +25,6 @@ public class NearestNeighbor implements Algorithm{
             return;
         }
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int x = 0; x < matrix.length; x++) {
-                System.out.print(matrix[i][x]+" ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-
         // Now we have to convert the start string to the id
         int current = 0;
         for (int i = 0; i < cities.length; i++) {
@@ -39,6 +33,7 @@ public class NearestNeighbor implements Algorithm{
                 break;
             }
         }
+        distance = 0;
         int idStart = current;
         path = new ArrayList<Integer>();
         path.add(current);
@@ -48,11 +43,13 @@ public class NearestNeighbor implements Algorithm{
         }
         path.add(idStart);
 
+        ArrayList<City> sortedCities = new ArrayList<>();
         for (int i = 0; i < path.size(); i++) {
-            System.out.println(cities[path.get(i)].getCityName());
+            sortedCities.add(cities[path.get(i)]);
         }
 
-        System.out.println();
+        this.sortedCities.setSortedCities(sortedCities);
+        this.sortedCities.setDistance(distance);
     }
     private int getNearest(int point, double[][] matrix) {
         double diff = Double.MAX_VALUE;
@@ -64,14 +61,13 @@ public class NearestNeighbor implements Algorithm{
                 position = i;
             }
         }
+        distance += diff;
         return position;
     }
 
     @Override
     public Cities getResult() {
-
-
-        return null;
+        return sortedCities;
     }
 
 }

@@ -1,3 +1,5 @@
+package com.packagedelivery;
+
 public class City {
     private boolean visited;
     private String cityName;
@@ -22,5 +24,13 @@ public class City {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "cityName='" + cityName + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

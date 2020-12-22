@@ -170,7 +170,7 @@
 											"top": 428,
 											"width": 360.90869140625,
 											"height": 13,
-											"text": "-cities: ArrayList<City>",
+											"text": "-cities: ArrayList<com.packagedelivery.City>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -256,7 +256,7 @@
 											"top": 496,
 											"width": 360.90869140625,
 											"height": 13,
-											"text": "+getDistance(city1: City, city2: City): double",
+											"text": "+getDistance(city1: com.packagedelivery.City, city2: com.packagedelivery.City): double",
 											"horizontalAlignment": 0
 										}
 									],
@@ -364,7 +364,7 @@
 											"top": 223,
 											"width": 222.92333984375,
 											"height": 13,
-											"text": "Application"
+											"text": "com.packagedelivery.Application"
 										},
 										{
 											"_type": "LabelView",
@@ -580,7 +580,7 @@
 											"top": 423,
 											"width": 243.1279296875,
 											"height": 13,
-											"text": "Console"
+											"text": "com.packagedelivery.Console"
 										},
 										{
 											"_type": "LabelView",
@@ -793,7 +793,7 @@
 											"top": 167,
 											"width": 110.89990234375,
 											"height": 13,
-											"text": "NearestNeighbor"
+											"text": "com.packagedelivery.NearestNeighbor"
 										},
 										{
 											"_type": "LabelView",
@@ -984,7 +984,7 @@
 											"top": 247,
 											"width": 110.89990234375,
 											"height": 13,
-											"text": "ConvexHull"
+											"text": "com.packagedelivery.ConvexHull"
 										},
 										{
 											"_type": "LabelView",
@@ -1179,7 +1179,7 @@
 											"top": 327,
 											"width": 110.89990234375,
 											"height": 13,
-											"text": "BruteForce"
+											"text": "com.packagedelivery.BruteForce"
 										},
 										{
 											"_type": "LabelView",
@@ -2719,7 +2719,7 @@
 											"top": 95,
 											"width": 209.142578125,
 											"height": 13,
-											"text": "City"
+											"text": "com.packagedelivery.City"
 										},
 										{
 											"_type": "LabelView",
@@ -2963,7 +2963,7 @@
 											"top": 231,
 											"width": 209.142578125,
 											"height": 13,
-											"text": "+City(cityName: String, id: int)",
+											"text": "+com.packagedelivery.City(cityName: String, id: int)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3446,7 +3446,7 @@
 											"top": 124,
 											"width": 230.1025390625,
 											"height": 13,
-											"text": "-sortedCities: ArrayList<City>",
+											"text": "-sortedCities: ArrayList<com.packagedelivery.City>",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3548,7 +3548,7 @@
 											"top": 207,
 											"width": 230.1025390625,
 											"height": 13,
-											"text": "+getSortedCities(): ArrayList<City>",
+											"text": "+getSortedCities(): ArrayList<com.packagedelivery.City>",
 											"horizontalAlignment": 0
 										},
 										{
@@ -3565,7 +3565,7 @@
 											"top": 222,
 											"width": 230.1025390625,
 											"height": 13,
-											"text": "+setSortedCities(cities: ArrayList<City>)",
+											"text": "+setSortedCities(cities: ArrayList<com.packagedelivery.City>)",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3674,7 +3674,7 @@
 											"top": 44,
 											"width": 139.08984375,
 											"height": 13,
-											"text": "Algorithm"
+											"text": "com.packagedelivery.Algorithm"
 										},
 										{
 											"_type": "LabelView",
@@ -5750,7 +5750,7 @@
 							},
 							"name": "cities",
 							"visibility": "private",
-							"type": "ArrayList<City>"
+							"type": "ArrayList<com.packagedelivery.City>"
 						}
 					],
 					"operations": [
@@ -5855,7 +5855,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Application",
+					"name": "com.packagedelivery.Application",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -5995,7 +5995,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Console",
+					"name": "com.packagedelivery.Console",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -6079,7 +6079,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "NearestNeighbor",
+					"name": "com.packagedelivery.NearestNeighbor",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",
@@ -6126,7 +6126,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "ConvexHull",
+					"name": "com.packagedelivery.ConvexHull",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",
@@ -6200,7 +6200,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "BruteForce",
+					"name": "com.packagedelivery.BruteForce",
 					"ownedElements": [
 						{
 							"_type": "UMLDependency",
@@ -6274,7 +6274,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "City",
+					"name": "com.packagedelivery.City",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -6438,7 +6438,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF2fLouB/w5uVg="
 							},
-							"name": "City",
+							"name": "com.packagedelivery.City",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6527,7 +6527,7 @@
 							},
 							"name": "sortedCities",
 							"visibility": "private",
-							"type": "ArrayList<City>"
+							"type": "ArrayList<com.packagedelivery.City>"
 						}
 					],
 					"operations": [
@@ -6624,7 +6624,7 @@
 										"$ref": "AAAAAAF2fNnns1cydBA="
 									},
 									"name": "cities",
-									"type": "ArrayList<City>",
+									"type": "ArrayList<com.packagedelivery.City>",
 									"direction": "return"
 								}
 							]
@@ -6644,7 +6644,7 @@
 										"$ref": "AAAAAAF2fNofY1hIJVE="
 									},
 									"name": "cities",
-									"type": "ArrayList<City>"
+									"type": "ArrayList<com.packagedelivery.City>"
 								}
 							]
 						}
@@ -6656,7 +6656,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "Algorithm",
+					"name": "com.packagedelivery.Algorithm",
 					"stereotype": "Interface",
 					"operations": [
 						{
