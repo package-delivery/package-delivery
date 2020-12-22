@@ -1,3 +1,5 @@
+package com.packagedelivery;
+
 public class City {
     private boolean visited;
     private String cityName;

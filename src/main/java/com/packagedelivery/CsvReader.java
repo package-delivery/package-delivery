@@ -1,7 +1,7 @@
-import java.io.FileNotFoundException;
+package com.packagedelivery;
+
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
@@ -21,10 +21,12 @@ public abstract class CsvReader {
     public static boolean readCsvFile(String filename){
 
         try{
+            //src/main/resources/TSP.csv
             //Reads values of CSV file and splits the lines into own parts in array
-            String[] lines = Files.readString(Paths.get("files/" + filename)).split("\n");
+            String[] lines = Files.readString(Paths.get("main/resources/" + filename)).split("\n");
+            System.out.println("Path: " + Paths.get("resources" + filename).toString());
 
-            //initializes City array
+            //initializes com.project.City array
             cityMatrix = new City[lines.length];
             int counter = 0;
             //for each city in csv file, a city gets created with
@@ -33,7 +35,7 @@ public abstract class CsvReader {
                 cityMatrix[counter] = new City(s, counter-1);
                 counter++;
             }
-            // Remove fist element of City Array because it is only "CSV" or "X" or something like that
+            // Remove fist element of com.project.City Array because it is only "CSV" or "X" or something like that
             cityMatrix = Arrays.copyOfRange(cityMatrix, 1, cityMatrix.length);
 
             //distance matrix gets initialized
@@ -51,7 +53,7 @@ public abstract class CsvReader {
         //catches file not found exception
         //and returns false if not found
         catch(IOException e) {
-            System.err.println("Error");
+            System.err.println("Error opening File");
             return false;
         }
 
