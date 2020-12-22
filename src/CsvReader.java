@@ -34,13 +34,13 @@ public abstract class CsvReader {
             }
 
             //distance matrix gets initialized
-            distanceMatrix = new double[lines.length][lines.length];
+            distanceMatrix = new double[lines.length-1][lines.length-1];
             //nested for loops to parse values from
             //csv file onto distance matrix
             for (int i = 1; i < lines.length; i++){
                 String [] buffer = lines[i].split(",");
                 for (int j = 1; j < buffer.length; j++){
-                    distanceMatrix[i][j] = Double.parseDouble(buffer[j]);
+                    distanceMatrix[i-1][j-1] = Double.parseDouble(buffer[j]);
                 }
             }
             return true;
