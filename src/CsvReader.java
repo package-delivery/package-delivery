@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 public abstract class CsvReader {
 
@@ -29,9 +30,11 @@ public abstract class CsvReader {
             //for each city in csv file, a city gets created with
             //its name and counter as the id and added to the city matrix
             for (String s:lines[0].split(",")){
-                cityMatrix[counter] = new City(s, counter);
+                cityMatrix[counter] = new City(s, counter-1);
                 counter++;
             }
+            // Remove fist element of City Array because it is only "CSV" or "X" or something like that
+            cityMatrix = Arrays.copyOfRange(cityMatrix, 1, cityMatrix.length);
 
             //distance matrix gets initialized
             distanceMatrix = new double[lines.length-1][lines.length-1];
