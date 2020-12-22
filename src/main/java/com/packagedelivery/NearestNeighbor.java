@@ -1,3 +1,5 @@
+package com.packagedelivery;
+
 import java.util.ArrayList;
 
 public class NearestNeighbor implements Algorithm{
@@ -6,7 +8,7 @@ public class NearestNeighbor implements Algorithm{
     private Cities sortedCities = new Cities();
 
     public NearestNeighbor(String start) {
-        // get City array and adjazenzmatrix
+        // get com.project.City array and adjazenzmatrix
         double[][] matrix = CsvReader.getDistanceMatrix();
         City[] cities = CsvReader.getCityMatrix();
 
