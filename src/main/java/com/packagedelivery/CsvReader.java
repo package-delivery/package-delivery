@@ -23,8 +23,7 @@ public abstract class CsvReader {
         try{
             //src/main/resources/TSP.csv
             //Reads values of CSV file and splits the lines into own parts in array
-            String[] lines = Files.readString(Paths.get("main/resources/" + filename)).split("\n");
-            System.out.println("Path: " + Paths.get("resources" + filename).toString());
+            String[] lines = Files.readString(Paths.get("src/main/resources/" + filename)).split("\n");
 
             //initializes com.project.City array
             cityMatrix = new City[lines.length];
