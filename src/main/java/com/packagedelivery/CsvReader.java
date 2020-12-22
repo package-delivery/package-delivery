@@ -9,7 +9,12 @@ public abstract class CsvReader {
 
     private static double[][] distanceMatrix;
     private static City [] cityMatrix;
-    
+
+    /**
+     * Returns all Cities in the csv file
+     * Used to convert city name and id
+     * @return City[] Array with all cities
+     */
     public static City[] getCityMatrix(){
         return cityMatrix;
     }
@@ -21,7 +26,6 @@ public abstract class CsvReader {
     public static boolean readCsvFile(String filename){
 
         try{
-            //src/main/resources/TSP.csv
             //Reads values of CSV file and splits the lines into own parts in array
             String[] lines = Files.readString(Paths.get("src/main/resources/" + filename)).split("\n");
 
@@ -30,7 +34,7 @@ public abstract class CsvReader {
             int counter = 0;
             //for each city in csv file, a city gets created with
             //its name and counter as the id and added to the city matrix
-            for (String s:lines[0].split(",")){
+            for (String s:lines[0].trim().split(",")){
                 cityMatrix[counter] = new City(s, counter-1);
                 counter++;
             }
