@@ -56,7 +56,6 @@ public abstract class CsvReader {
         //catches file not found exception
         //and returns false if not found
         catch(IOException e) {
-            System.err.println("Error opening File");
             return false;
         }
 

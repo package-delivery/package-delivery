@@ -8,7 +8,7 @@ public class Application {
         while (!validInput) {
             String filename = Console.getFilename();
             if (!CsvReader.readCsvFile(filename)) {
-                System.out.println("Der eingegebene Dateiname ist nicht korrekt! Bitte verusche es erneut:");
+                System.err.println("Der eingegebene Dateiname ist nicht korrekt! Bitte verusche es erneut:");
             } else {
                 validInput = true;
             }

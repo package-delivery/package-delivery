@@ -12,13 +12,13 @@ public class CsvReaderTest {
         @Test
         @DisplayName("Test return value if file is present")
         void readCsvFileTest() {
-            assertEquals(true, CsvReader.readCsvFile("TSP.csv"));
+            assertTrue(CsvReader.readCsvFile("TSP.csv"));
         }
 
         @Test
         @DisplayName("Test return value if file is not present")
         void readCsvFileTestFail() {
-            assertEquals(false, CsvReader.readCsvFile("test.csv"));
+            assertFalse(CsvReader.readCsvFile("test.csv"));
         }
     }
 
