@@ -23,4 +23,11 @@ public class City {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "cityName='" + cityName + '\'' +
+                '}';
+    }
 }
