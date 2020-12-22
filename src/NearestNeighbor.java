@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class NearestNeighbor implements Algorithm{
-
+    private double distance;
     private ArrayList<Integer> path;
-
+    private Cities sortedCities = new Cities();
 
     public NearestNeighbor(String start) {
         // get City array and adjazenzmatrix
@@ -39,6 +39,7 @@ public class NearestNeighbor implements Algorithm{
                 break;
             }
         }
+        distance = 0;
         int idStart = current;
         path = new ArrayList<Integer>();
         path.add(current);
@@ -48,11 +49,14 @@ public class NearestNeighbor implements Algorithm{
         }
         path.add(idStart);
 
+        ArrayList<City> sortedCities = new ArrayList<>();
         for (int i = 0; i < path.size(); i++) {
-            System.out.println(cities[path.get(i)].getCityName());
+            sortedCities.add(cities[path.get(i)]);
+            System.out.println(sortedCities.get(i).getCityName());
         }
 
-        System.out.println();
+        this.sortedCities.setSortedCities(sortedCities);
+        this.sortedCities.setDistance(distance);
     }
     private int getNearest(int point, double[][] matrix) {
         double diff = Double.MAX_VALUE;
@@ -64,14 +68,13 @@ public class NearestNeighbor implements Algorithm{
                 position = i;
             }
         }
+        distance += diff;
         return position;
     }
 
     @Override
     public Cities getResult() {
-
-
-        return null;
+        return sortedCities;
     }
 
 }

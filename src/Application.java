@@ -11,7 +11,7 @@ public class Application {
         }else{
             switch(algoName.get()) {
                 case NEAREST_NEIGHBOR:
-                    NearestNeighbor nn = new NearestNeighbor("test");
+                    NearestNeighbor nn = new NearestNeighbor("a");
                     nn.getResult().toString();
                     break;
                 case CONVEX_HULL:
