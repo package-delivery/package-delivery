@@ -28,6 +28,7 @@ public class City {
     public String toString() {
         return "City{" +
                 "cityName='" + cityName + '\'' +
+                ", id=" + id +
                 '}';
     }
 }

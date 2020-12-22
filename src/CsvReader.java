@@ -29,7 +29,7 @@ public abstract class CsvReader {
             int counter = 0;
             //for each city in csv file, a city gets created with
             //its name and counter as the id and added to the city matrix
-            for (String s:lines[0].split(",")){
+            for (String s:lines[0].trim().split(",")){
                 cityMatrix[counter] = new City(s, counter-1);
                 counter++;
             }

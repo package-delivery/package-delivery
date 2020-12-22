@@ -23,14 +23,6 @@ public class NearestNeighbor implements Algorithm{
             return;
         }
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int x = 0; x < matrix.length; x++) {
-                System.out.print(matrix[i][x]+" ");
-            }
-            System.out.println();
-        }
-        System.out.println();
-
         // Now we have to convert the start string to the id
         int current = 0;
         for (int i = 0; i < cities.length; i++) {
@@ -52,7 +44,6 @@ public class NearestNeighbor implements Algorithm{
         ArrayList<City> sortedCities = new ArrayList<>();
         for (int i = 0; i < path.size(); i++) {
             sortedCities.add(cities[path.get(i)]);
-            System.out.println(sortedCities.get(i).getCityName());
         }
 
         this.sortedCities.setSortedCities(sortedCities);
