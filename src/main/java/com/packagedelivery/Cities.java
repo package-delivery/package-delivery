@@ -31,14 +31,6 @@ public class Cities {
         this.sortedCities = sortedCities;
     }
 
-    public void setSortedCities(String bestRoute) {
-        City[] cities = CsvReader.getCityMatrix();
-        sortedCities = new ArrayList<City>();
-        for (int i = 0; i < bestRoute.length(); i++) {
-            sortedCities.add(cities[Integer.parseInt(String.valueOf(bestRoute.charAt(i)))]);
-        }
-    }
-
     @Override
     public String toString() {
         return "Cities{" +
