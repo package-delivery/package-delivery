@@ -37,11 +37,12 @@ public class NearestNeighbor implements Algorithm{
         int idStart = current;
         path = new ArrayList<Integer>();
         path.add(current);
-        while (path.size() < matrix.length-1) {
+        while (path.size() < matrix.length) {
             path.add(getNearest(current, matrix));
             current = path.get(path.size()-1);
         }
         path.add(idStart);
+        distance += matrix[idStart][current];
 
         ArrayList<City> sortedCities = new ArrayList<>();
         for (int i = 0; i < path.size(); i++) {

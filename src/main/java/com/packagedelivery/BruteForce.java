@@ -24,9 +24,12 @@ public class BruteForce implements Algorithm{
     public Cities getResult(){
 
         double distance = 0;
+        Cities bestDistance = new Cities();
         double test = 0;
         String testString = "";
 
+        // Initialize bestDistance
+        bestDistance.setDistance(Double.MAX_VALUE);
 
         //Writes each City object to matching part in array
         for(int i = 0; i < CsvReader.getCityMatrix().length; i++){
@@ -38,43 +41,31 @@ public class BruteForce implements Algorithm{
         citiesArray[CsvReader.getCityMatrix().length] = CsvReader.getCityMatrix()[0];
         testString += CsvReader.getCityMatrix()[0].getId();
 
-        //loops through all cities and adds length together
-        //for(int i = 0; i < citiesArray.length - 1; i++){
-          //  distance += CsvReader.getDistanceMatrix()[citiesArray[i].getId()][citiesArray[i + 1].getId()];
-        //}
-
-        //to remove first and last position from teststring
-
         permutation("", testString.substring(1, testString.length()-1));
-
-        for(int i = 0; i < permutationsArray.size(); i++){
-            //System.out.println(permutationsArray.get(i));
-        }
 
         //to add "home" to permutationsArray
         for(int i = 0; i < permutationsArray.size(); i++){
             permutationsArray.set(i, testString.charAt(0) + permutationsArray.get(i) + testString.charAt(0));
-            //System.out.println(testString.charAt(0) + permutationsArray.get(i) + testString.charAt(0));
         }
 
 
         for(int i = 0; i < permutationsArray.size(); i++){
             //System.out.println(permutationsArray.get(i));
-        }
-
-        System.out.println();
-        System.out.println();
-
-        for(int i = 0; i < permutationsArray.size(); i++){
-            System.out.println(permutationsArray.get(i));
             for(int j = 0; j < permutationsArray.get(i).length() - 1; j++){
                 distance += CsvReader.getDistanceMatrix()[Integer.parseInt(String.valueOf(permutationsArray.get(i).charAt(j)))][Integer.parseInt(String.valueOf(permutationsArray.get(i).charAt(j + 1)))];
             }
-            System.out.println(distance);
+            //System.out.println(distance);
+            if (distance < bestDistance.getDistance()) {
+                System.out.println(permutationsArray.get(i));
+                bestDistance.setDistance(distance);
+                bestDistance.setSortedCities(permutationsArray.get(i));
+            }
             distance = 0;
         }
 
-        return testCity;
+        //System.out.println("Die beste Route ist mit sicherheit "+bestDistance+"km lang");
+
+        return bestDistance;
 
     }
 }
