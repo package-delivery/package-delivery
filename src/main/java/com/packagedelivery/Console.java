@@ -21,7 +21,11 @@ public abstract class Console {
             return Optional.empty();
         }
     }
-
+    public static String getStartingPosition() {
+        System.out.println("In welcher Stadt möchten Sie starten?");
+        Scanner s = new Scanner(System.in);
+        return s.nextLine();
+    }
     public static String getFilename() {
         System.out.println("Input filename:");
         Scanner s = new Scanner(System.in);
