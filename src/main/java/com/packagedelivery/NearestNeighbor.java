@@ -38,7 +38,9 @@ public class NearestNeighbor implements Algorithm{
         path = new ArrayList<Integer>();
         path.add(current);
         while (path.size() < matrix.length) {
-            path.add(getNearest(current, matrix));
+            double[] temp = getNearest(current, matrix, path);
+            path.add((int) temp[0]);
+            distance += temp[1];
             current = path.get(path.size()-1);
         }
         path.add(idStart);
@@ -52,7 +54,7 @@ public class NearestNeighbor implements Algorithm{
         this.sortedCities.setSortedCities(sortedCities);
         this.sortedCities.setDistance(distance);
     }
-    private int getNearest(int point, double[][] matrix) {
+    protected static double[] getNearest(int point, double[][] matrix, ArrayList<Integer> path) {
         double diff = Double.MAX_VALUE;
         int position = 0;
         for (int i = 0; i < matrix.length; i++) {
@@ -62,8 +64,8 @@ public class NearestNeighbor implements Algorithm{
                 position = i;
             }
         }
-        distance += diff;
-        return position;
+        //distance += diff;
+        return new double[]{position, diff};
     }
 
     @Override

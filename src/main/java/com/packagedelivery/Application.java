@@ -32,6 +32,10 @@ public class Application {
                     BruteForce bf = new BruteForce();
                     System.out.println(bf.getResult());
                     break;
+                case NEAREST_INSERTION:
+                    NearestInsertion ni = new NearestInsertion(Console.getStartingPosition());
+                    System.out.println(ni.getResult());
+                    break;
             }
         }
     }
