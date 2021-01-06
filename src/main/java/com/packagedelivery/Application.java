@@ -36,6 +36,9 @@ public class Application {
                     NearestInsertion ni = new NearestInsertion(Console.getStartingPosition());
                     System.out.println(ni.getResult());
                     break;
+                case BETTER_BRUTE_FORCE:
+                    BetterBruteForce bbf = new BetterBruteForce(Console.getStartingPosition());
+                    break;
             }
         }
     }
