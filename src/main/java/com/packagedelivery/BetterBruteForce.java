@@ -64,6 +64,7 @@ public class BetterBruteForce implements Algorithm {
         }
         // Check if new route is shorter than current best!
         if (distance < currentBest) {
+            System.out.println(distance);
             currentBest = distance;
             currentBestRoute = s;
         }
