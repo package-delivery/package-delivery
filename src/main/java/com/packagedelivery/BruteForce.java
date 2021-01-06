@@ -49,12 +49,10 @@ public class BruteForce implements Algorithm{
 
         permutation("", initialPath.substring(1, initialPath.length()-1));
 
-        System.out.println(permutationsArray);
         //to add "home" to permutationsArray
         for(int i = 0; i < permutationsArray.size(); i++){
             permutationsArray.set(i, initialPath.charAt(0) + permutationsArray.get(i) + initialPath.charAt(0));
         }
-        System.out.println(permutationsArray);
 
         for (String s : permutationsArray) {
             //System.out.println(permutationsArray.get(i));
@@ -69,12 +67,10 @@ public class BruteForce implements Algorithm{
             distance = 0;
         }
 
-        //System.out.println("Die beste Route ist mit sicherheit "+bestDistance+"km lang");
         setSortedCities(bestPath);
         finalCity.setDistance(bestDistance);
         finalCity.setSortedCities(sortedCities);
 
         return finalCity;
-
     }
 }

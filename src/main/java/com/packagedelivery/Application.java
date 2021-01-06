@@ -38,6 +38,7 @@ public class Application {
                     break;
                 case BETTER_BRUTE_FORCE:
                     BetterBruteForce bbf = new BetterBruteForce(Console.getStartingPosition());
+                    System.out.println(bbf.getResult());
                     break;
             }
         }
