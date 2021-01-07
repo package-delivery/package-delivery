@@ -14,7 +14,6 @@ public class Application {
                 validInput = true;
             }
         }
-        //System.out.println(CsvReader.readCsvFile(filename));
 
         Optional<AlgorithmName> algoName = Console.getSelectedAlgorithm();
         if(algoName.isEmpty()) {
