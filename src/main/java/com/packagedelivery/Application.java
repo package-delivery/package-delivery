@@ -4,7 +4,9 @@ import java.util.Optional;
 
 public class Application {
     public static void main(String[] args) {
+
         boolean validInput = false;
+        /*
         while (!validInput) {
             String filename = Console.getFilename();
             if (!CsvReader.readCsvFile(filename)) {
@@ -42,5 +44,12 @@ public class Application {
                     break;
             }
         }
+
+        */
+        while (!validInput) {
+            String Csv = Console.getFilename();
+            System.out.println(Csv);
+        }
+
     }
 }
