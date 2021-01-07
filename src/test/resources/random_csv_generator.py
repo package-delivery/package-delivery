@@ -1,0 +1,12 @@
+# This script is generating some random csv files for the TSP testcases.
+# The distances between the cities are random so DON'T trust them :)
+import random
+
+cities = ["Albany", "Amsterdam", "Auburn", "Babylon", "Batavia", "Beacon", "Bedford", "Binghamton", "Bronx", "Brooklyn", "Buffalo", "Chautauqua", "Cheektowaga", "Clinton", "Cohoes", "Coney Island", "Cooperstown", "Corning", "Cortland", "Crown Point", "Dunkirk", "East Aurora", "East Hampton", "Eastchester", "Elmira", "Flushing", "Forest Hills", "Fredonia", "Garden City", "Geneva", "Glens Falls", "Gloversville", "Great Neck", "Hammondsport", "Harlem", "Hempstead", "Herkimer", "Hudson", "Huntington", "Hyde Park", "Ilion", "Ithaca", "Jamestown", "Johnstown", "Kingston", "Lackawanna", "Lake Placid", "Levittown", "Lockport", "Mamaroneck", "Manhattan", "Massena", "Middletown", "Mineola", "Mount Vernon", "New Paltz", "New Rochelle", "New Windsor", "New York City", "Newburgh", "Niagara Falls", "North Hempstead", "Nyack", "Ogdensburg", "Olean", "Oneida", "Oneonta", "Ossining", "Oswego", "Oyster Bay", "Palmyra", "Peekskill", "Plattsburgh", "Port Washington", "Potsdam", "Poughkeepsie", "Queens", "Rensselaer", "Rochester", "Rome", "Rotterdam", "Rye", "Sag Harbor", "Saranac Lake", "Saratoga Springs", "Scarsdale", "Schenectady", "Seneca Falls", "Southampton", "Staten Island", "Stony Brook", "Stony Point", "Syracuse", "Tarrytown", "Ticonderoga", "Tonawanda", "Troy", "Utica", "Watertown", "Watervliet", "Watkins Glen", "West Seneca", "White Plains", "Woodstock", "Yonkers"]
+print (len(cities))
+
+for i in range(100):
+    random.shuffle(cities)
+    s = "CSV," + ','.join(cities)
+    print(s)
+
