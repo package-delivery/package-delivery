@@ -11,6 +11,12 @@ public class BetterBruteForce implements Algorithm {
     private String currentBestRoute = "";
     private int current;
 
+    /**
+     * Constructor, which calculates the best route.
+     * This algorithm tries all routes, therefore the result will be optimal.
+     * @param start name of the starting position
+     */
+
     public BetterBruteForce(String start) {
         matrix = CsvReader.getDistanceMatrix();
         cities = CsvReader.getCityMatrix();
@@ -45,6 +51,11 @@ public class BetterBruteForce implements Algorithm {
         bestDistance.setSortedCities(sortedCities);
     }
 
+    /**
+     * Recursive algorithm which calculates all possibilities
+     * @param prefix
+     * @param str
+     */
     //calculates permutations
     private void permutation(String prefix, String str) {
         int n = str.length();
@@ -55,6 +66,10 @@ public class BetterBruteForce implements Algorithm {
         }
     }
 
+    /**
+     * Takes a path as String, calculates if it is better than the current best path and remembers it.
+     * @param permutation a path as String
+     */
     private void calculate(String permutation) {
         // Adding start and ending point to calculation
         String s = current+permutation+current;
@@ -70,6 +85,10 @@ public class BetterBruteForce implements Algorithm {
         }
     }
 
+    /**
+     * Returns a Cities obejct with the best possible path
+     * @return Cities object
+     */
     @Override
     public Cities getResult() {
         return bestDistance;
