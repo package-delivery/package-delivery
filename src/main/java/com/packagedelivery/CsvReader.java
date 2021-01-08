@@ -78,7 +78,7 @@ public abstract class CsvReader {
      * @return boolean if the operation is successful
      */
     public static boolean readString(String string){
-        String[] lines = string.split(System.getProperty("line.separator"));
+        String[] lines = string.split("\n");
 
         //initializes com.project.City array
         cityMatrix = new City[lines.length];
