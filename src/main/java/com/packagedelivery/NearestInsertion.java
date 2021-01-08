@@ -9,6 +9,12 @@ public class NearestInsertion implements Algorithm{
     private City[] cities;
     private Cities sortedCities = new Cities();
 
+
+    /**
+     * Constructor, which calculates the best nearest insertion route.
+     * Important: It is a heuristic algorithm, therefore the result won't be optimal.
+     * @param start name of the starting position
+     */
     public NearestInsertion(String start) {
         // Get adjazenz matrix and cities from CSVReader
         matrix = CsvReader.getDistanceMatrix();
@@ -82,6 +88,11 @@ public class NearestInsertion implements Algorithm{
         this.sortedCities.setDistance(getWholeDistance(path));
     }
 
+    /**
+     * Calculates the distance of a route and returns it
+     * @param path an ArrayList which contains a route.
+     * @return the distance of the route as double
+     */
     private double getWholeDistance(ArrayList<Integer> path) {
         double dist = 0;
         for (int i = 0; i < path.size()-1; i++) {
@@ -90,6 +101,10 @@ public class NearestInsertion implements Algorithm{
         return dist;
     }
 
+    /**
+     * Return Cities object
+     * @return Cities object with nearest insertion route
+     */
     @Override
     public Cities getResult() {
         return this.sortedCities;
