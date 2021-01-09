@@ -1,5 +1,7 @@
 package com.packagedelivery;
 
+import java.util.Objects;
+
 public class City {
     private boolean visited;
     private String cityName;
@@ -24,6 +26,19 @@ public class City {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        City city = (City) o;
+        return id == city.id && Objects.equals(cityName, city.cityName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(cityName, id);
     }
 
     @Override

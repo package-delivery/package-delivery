@@ -16,7 +16,7 @@ public class Cities {
     }
     public Cities(double distance, ArrayList<City> sortedCities) {
         this.distance = distance;
-        this.sortedCities = new ArrayList<City>(sortedCities);
+        this.sortedCities = sortedCities;
     }
 
     /**
