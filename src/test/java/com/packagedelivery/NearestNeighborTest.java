@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NearestNeighborTest {
 
     @Nested
-    class checkNearestNeighbor {
+    class CheckNearestNeighbor {
         @Test
         @DisplayName("Test returns correct NearestNeighbor values for tobiTsp.csv")
         void checkNearestNeighborTest() {
@@ -20,29 +20,25 @@ public class NearestNeighborTest {
             NearestNeighbor nn = new NearestNeighbor("a");
             Cities result = nn.getResult();
             City start = new City("a", 0);
-
-
             Cities expected = new Cities(29, new ArrayList<City>(Arrays.asList(start, new City("b", 1), new City("c", 2), new City("d", 3), new City("e", 4),start)));
-            assertEquals(29, result.getDistance());
-            //String expected = "Cities{distance=29.0, time=0.0, sortedCities=[City{cityName='a', id=0}, City{cityName='b', id=1}, City{cityName='c', id=2}, City{cityName='d', id=3}, City{cityName='e', id=4}, City{cityName='a', id=0}]}";
-            //assertEquals(expected, result.toString());
             assertEquals(result, expected);
 
-
             //now with another startposition
-            /*
             nn = new NearestNeighbor("c");
             result = nn.getResult();
-            assertEquals(31, result.getDistance());
-            expected = "Cities{distance=31.0, time=0.0, sortedCities=[City{cityName='c', id=2}, City{cityName='a', id=0}, City{cityName='b', id=1}, City{cityName='e', id=4}, City{cityName='d', id=3}, City{cityName='c', id=2}]}";
-            assertEquals(expected, result.toString());
-            */
+            start = new City("c", 2);
+            expected = new Cities(31, new ArrayList<City>(Arrays.asList(start, new City("a", 0), new City("b", 1), new City("e", 4), new City("d", 3), start)));
+            assertEquals(expected, result);
+
         }
-
-
-
     }
 
+    @Nested
+    class RandomTests {
+        @Test
+        @DisplayName("Test returns correct values for random generated csv files")
+        void checkNearestNeighborTest() {
 
-
+        }
+    }
 }
