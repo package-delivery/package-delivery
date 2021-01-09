@@ -1,0 +1,8 @@
+CSV,New Paltz,Scarsdale,Yonkers,Flushing,Oswego,Glens Falls,Plattsburgh
+New Paltz,0,35.2,66.9,41.0,15.5,48.6,29.6
+Scarsdale,35.2,0,70.5,56.4,53.1,67.9,28.3
+Yonkers,66.9,70.5,0,49.9,85.2,47.0,70.4
+Flushing,41.0,56.4,49.9,0,99.3,18.8,21.8
+Oswego,15.5,53.1,85.2,99.3,0,75.9,10.3
+Glens Falls,48.6,67.9,47.0,18.8,75.9,0,29.7
+Plattsburgh,29.6,28.3,70.4,21.8,10.3,29.7,0

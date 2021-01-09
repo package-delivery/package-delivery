@@ -1,0 +1,7 @@
+CSV,Bedford,Beacon,Rotterdam,Saratoga Springs,Levittown,Plattsburgh
+Bedford,0,39.5,65.1,88.5,73.5,99.2
+Beacon,39.5,0,3.5,98.3,68.4,28.1
+Rotterdam,65.1,3.5,0,50.8,16.4,45.7
+Saratoga Springs,88.5,98.3,50.8,0,61.3,4.1
+Levittown,73.5,68.4,16.4,61.3,0,54.1
+Plattsburgh,99.2,28.1,45.7,4.1,54.1,0

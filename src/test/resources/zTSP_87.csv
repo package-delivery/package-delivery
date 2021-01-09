@@ -1,0 +1,9 @@
+CSV,Stony Brook,Batavia,Jamestown,Watervliet,Ossining,Mount Vernon,West Seneca,Mamaroneck
+Stony Brook,0,46.9,13.2,83.9,17.8,79.8,0.2,75.2
+Batavia,46.9,0,27.5,67.2,88.8,57.8,6.5,25.9
+Jamestown,13.2,27.5,0,98.2,1.1,87.7,14.3,48.2
+Watervliet,83.9,67.2,98.2,0,79.7,80.1,26.6,54.9
+Ossining,17.8,88.8,1.1,79.7,0,9.3,58.9,88.0
+Mount Vernon,79.8,57.8,87.7,80.1,9.3,0,89.4,78.2
+West Seneca,0.2,6.5,14.3,26.6,58.9,89.4,0,58.7
+Mamaroneck,75.2,25.9,48.2,54.9,88.0,78.2,58.7,0

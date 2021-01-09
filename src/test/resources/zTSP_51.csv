@@ -1,0 +1,8 @@
+CSV,North Hempstead,Geneva,New York City,Lackawanna,East Hampton,White Plains,Bedford
+North Hempstead,0,75.2,26.7,87.6,73.1,17.8,31.8
+Geneva,75.2,0,97.5,42.4,51.4,36.1,95.4
+New York City,26.7,97.5,0,26.7,87.2,2.9,27.8
+Lackawanna,87.6,42.4,26.7,0,48.7,3.4,2.6
+East Hampton,73.1,51.4,87.2,48.7,0,45.3,30.2
+White Plains,17.8,36.1,2.9,3.4,45.3,0,31.5
+Bedford,31.8,95.4,27.8,2.6,30.2,31.5,0

@@ -1,0 +1,6 @@
+CSV,Oneida,Rome,Hyde Park,New Paltz,Levittown
+Oneida,0,19.3,53.2,56.3,96.8
+Rome,19.3,0,3.5,7.6,66.4
+Hyde Park,53.2,3.5,0,99.1,22.1
+New Paltz,56.3,7.6,99.1,0,39.7
+Levittown,96.8,66.4,22.1,39.7,0

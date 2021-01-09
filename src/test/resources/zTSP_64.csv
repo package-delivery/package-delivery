@@ -1,0 +1,6 @@
+CSV,Oswego,White Plains,Nyack,Beacon,Newburgh
+Oswego,0,80.1,77.2,97.0,27.9
+White Plains,80.1,0,53.6,92.8,4.8
+Nyack,77.2,53.6,0,65.7,2.0
+Beacon,97.0,92.8,65.7,0,41.6
+Newburgh,27.9,4.8,2.0,41.6,0

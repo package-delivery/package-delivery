@@ -1,0 +1,6 @@
+CSV,Cohoes,Buffalo,Corning,Batavia,Palmyra
+Cohoes,0,88.5,33.9,96.3,27.2
+Buffalo,88.5,0,98.7,12.4,5.4
+Corning,33.9,98.7,0,44.0,13.4
+Batavia,96.3,12.4,44.0,0,8.4
+Palmyra,27.2,5.4,13.4,8.4,0

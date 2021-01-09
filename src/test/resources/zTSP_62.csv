@@ -1,0 +1,6 @@
+CSV,Middletown,Troy,Kingston,Mamaroneck,Johnstown
+Middletown,0,79.0,41.9,13.7,83.3
+Troy,79.0,0,38.2,47.1,68.9
+Kingston,41.9,38.2,0,21.9,52.9
+Mamaroneck,13.7,47.1,21.9,0,63.1
+Johnstown,83.3,68.9,52.9,63.1,0

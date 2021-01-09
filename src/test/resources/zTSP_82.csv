@@ -1,0 +1,8 @@
+CSV,Beacon,Cortland,Babylon,Flushing,North Hempstead,Oyster Bay,Ossining
+Beacon,0,29.8,89.2,79.8,28.2,43.9,75.3
+Cortland,29.8,0,39.5,25.7,75.5,36.9,31.9
+Babylon,89.2,39.5,0,65.6,98.2,9.5,78.8
+Flushing,79.8,25.7,65.6,0,20.4,49.4,2.7
+North Hempstead,28.2,75.5,98.2,20.4,0,63.3,50.1
+Oyster Bay,43.9,36.9,9.5,49.4,63.3,0,55.1
+Ossining,75.3,31.9,78.8,2.7,50.1,55.1,0
