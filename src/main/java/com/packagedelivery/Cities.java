@@ -1,11 +1,23 @@
 package com.packagedelivery;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Cities {
     private double distance;
     private double time;
     private ArrayList<City> sortedCities;
+
+    /**
+     * Constructors for Cities
+     */
+    public Cities() {
+        this(0.0, null);
+    }
+    public Cities(double distance, ArrayList<City> sortedCities) {
+        this.distance = distance;
+        this.sortedCities = new ArrayList<City>(sortedCities);
+    }
 
     /**
      * Returns distance shortest distance that the algorithm calculated
@@ -53,6 +65,29 @@ public class Cities {
      */
     public void setSortedCities(ArrayList<City> sortedCities) {
         this.sortedCities = sortedCities;
+    }
+
+
+    /**
+     * Method for comparing two Cities objects (generated with IntelliJ)
+     * @param o Cities object
+     * @return true or false
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cities cities = (Cities) o;
+        return Double.compare(cities.distance, distance) == 0 && Objects.equals(sortedCities, cities.sortedCities);
+    }
+
+    /**
+     * HashCode method needed for ArrayLists (generated with IntelliJ)
+     * @return
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(distance, sortedCities);
     }
 
     @Override
