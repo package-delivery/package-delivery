@@ -1,8 +1,4 @@
-CSV,Coney Island,Forest Hills,Bedford,Utica,Beacon,Queens,Ticonderoga
-Coney Island,0,99.8,39.7,78.0,82.7,15.5,98.1
-Forest Hills,99.8,0,53.2,51.7,39.9,63.0,51.3
-Bedford,39.7,53.2,0,20.8,19.9,84.5,91.6
-Utica,78.0,51.7,20.8,0,62.0,29.6,77.5
-Beacon,82.7,39.9,19.9,62.0,0,53.4,35.2
-Queens,15.5,63.0,84.5,29.6,53.4,0,79.6
-Ticonderoga,98.1,51.3,91.6,77.5,35.2,79.6,0
+CSV,Rochester,Oneida,Johnstown
+Rochester,0,62.6,88.9
+Oneida,62.6,0,5.1
+Johnstown,88.9,5.1,0

@@ -1,0 +1,8 @@
+CSV,Garden City,Clinton,Watkins Glen,East Aurora,Cheektowaga,Mineola,Lackawanna
+Garden City,0,89.7,58.0,15.9,11.7,47.9,39.5
+Clinton,89.7,0,48.1,97.8,68.2,78.1,15.3
+Watkins Glen,58.0,48.1,0,82.2,62.1,49.7,96.0
+East Aurora,15.9,97.8,82.2,0,8.5,54.1,55.5
+Cheektowaga,11.7,68.2,62.1,8.5,0,16.5,83.1
+Mineola,47.9,78.1,49.7,54.1,16.5,0,84.9
+Lackawanna,39.5,15.3,96.0,55.5,83.1,84.9,0

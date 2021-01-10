@@ -1,0 +1,7 @@
+CSV,Johnstown,Rensselaer,Tonawanda,Ithaca,Bronx,Watertown
+Johnstown,0,39.6,66.6,83.6,18.3,14.8
+Rensselaer,39.6,0,18.0,43.9,71.8,29.6
+Tonawanda,66.6,18.0,0,43.7,76.3,62.5
+Ithaca,83.6,43.9,43.7,0,58.2,99.2
+Bronx,18.3,71.8,76.3,58.2,0,99.6
+Watertown,14.8,29.6,62.5,99.2,99.6,0

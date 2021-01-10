@@ -1,0 +1,9 @@
+CSV,Plattsburgh,Port Washington,Ogdensburg,Elmira,Newburgh,Niagara Falls,Buffalo,Hammondsport
+Plattsburgh,0,93.3,78.3,8.1,90.4,45.2,47.2,31.2
+Port Washington,93.3,0,8.6,51.8,4.1,8.4,7.4,1.2
+Ogdensburg,78.3,8.6,0,61.3,43.7,89.9,62.0,47.6
+Elmira,8.1,51.8,61.3,0,11.3,71.5,19.7,59.7
+Newburgh,90.4,4.1,43.7,11.3,0,83.8,13.2,68.4
+Niagara Falls,45.2,8.4,89.9,71.5,83.8,0,47.0,23.0
+Buffalo,47.2,7.4,62.0,19.7,13.2,47.0,0,31.7
+Hammondsport,31.2,1.2,47.6,59.7,68.4,23.0,31.7,0

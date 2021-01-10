@@ -1,12 +1,4 @@
-CSV,Plattsburgh,Gloversville,Woodstock,Watertown,Olean,Port Washington,Hempstead,New Rochelle,Buffalo,East Aurora,Watervliet
-Plattsburgh,0,23.8,16.8,21.0,20.2,89.0,28.5,94.0,61.9,93.4,8.1
-Gloversville,23.8,0,12.9,62.3,57.1,33.6,66.7,92.6,28.8,99.5,40.1
-Woodstock,16.8,12.9,0,72.3,19.6,99.3,23.1,18.5,64.7,13.0,29.3
-Watertown,21.0,62.3,72.3,0,69.8,83.5,9.6,75.9,16.5,13.4,36.1
-Olean,20.2,57.1,19.6,69.8,0,20.5,84.9,56.6,73.4,10.1,2.6
-Port Washington,89.0,33.6,99.3,83.5,20.5,0,43.2,68.7,15.4,60.9,61.5
-Hempstead,28.5,66.7,23.1,9.6,84.9,43.2,0,15.3,78.3,44.2,4.2
-New Rochelle,94.0,92.6,18.5,75.9,56.6,68.7,15.3,0,58.5,11.1,26.6
-Buffalo,61.9,28.8,64.7,16.5,73.4,15.4,78.3,58.5,0,77.7,21.6
-East Aurora,93.4,99.5,13.0,13.4,10.1,60.9,44.2,11.1,77.7,0,47.2
-Watervliet,8.1,40.1,29.3,36.1,2.6,61.5,4.2,26.6,21.6,47.2,0
+CSV,Syracuse,Saratoga Springs,Peekskill
+Syracuse,0,87.9,0.9
+Saratoga Springs,87.9,0,64.8
+Peekskill,0.9,64.8,0

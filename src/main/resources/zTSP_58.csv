@@ -1,0 +1,7 @@
+CSV,Rome,Ithaca,Glens Falls,Clinton,New Paltz,Gloversville
+Rome,0,8.1,27.6,70.4,68.8,11.4
+Ithaca,8.1,0,0.4,34.6,86.8,25.2
+Glens Falls,27.6,0.4,0,43.8,47.0,70.8
+Clinton,70.4,34.6,43.8,0,58.4,64.0
+New Paltz,68.8,86.8,47.0,58.4,0,67.4
+Gloversville,11.4,25.2,70.8,64.0,67.4,0

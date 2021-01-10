@@ -1,7 +1,11 @@
-CSV,Garden City,Niagara Falls,Albany,Watkins Glen,Cheektowaga,Amsterdam
-Garden City,0,81.9,66.4,2.7,29.9,78.1
-Niagara Falls,81.9,0,85.2,25.0,73.0,64.0
-Albany,66.4,85.2,0,76.5,65.3,72.0
-Watkins Glen,2.7,25.0,76.5,0,30.5,10.4
-Cheektowaga,29.9,73.0,65.3,30.5,0,74.0
-Amsterdam,78.1,64.0,72.0,10.4,74.0,0
+CSV,Southampton,Mamaroneck,Glens Falls,Jamestown,Syracuse,Herkimer,Schenectady,Buffalo,Amsterdam,Mount Vernon
+Southampton,0,45.9,80.5,54.8,24.2,58.7,65.2,90.3,35.6,69.0
+Mamaroneck,45.9,0,52.4,65.8,24.8,46.5,46.8,56.6,14.2,58.4
+Glens Falls,80.5,52.4,0,16.5,21.7,79.5,73.6,87.2,23.0,34.1
+Jamestown,54.8,65.8,16.5,0,11.3,6.1,23.3,15.4,54.7,34.1
+Syracuse,24.2,24.8,21.7,11.3,0,30.3,69.4,25.5,74.4,38.8
+Herkimer,58.7,46.5,79.5,6.1,30.3,0,44.8,57.4,23.8,11.8
+Schenectady,65.2,46.8,73.6,23.3,69.4,44.8,0,92.5,34.0,70.8
+Buffalo,90.3,56.6,87.2,15.4,25.5,57.4,92.5,0,74.2,72.0
+Amsterdam,35.6,14.2,23.0,54.7,74.4,23.8,34.0,74.2,0,52.3
+Mount Vernon,69.0,58.4,34.1,34.1,38.8,11.8,70.8,72.0,52.3,0

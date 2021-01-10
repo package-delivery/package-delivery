@@ -1,0 +1,8 @@
+CSV,Middletown,New Rochelle,Sag Harbor,Southampton,Jamestown,Rensselaer,Rotterdam
+Middletown,0,63.1,61.5,89.6,27.5,62.8,35.8
+New Rochelle,63.1,0,85.0,36.7,47.3,4.6,49.4
+Sag Harbor,61.5,85.0,0,25.4,81.3,71.6,70.5
+Southampton,89.6,36.7,25.4,0,19.6,90.6,20.0
+Jamestown,27.5,47.3,81.3,19.6,0,84.4,43.5
+Rensselaer,62.8,4.6,71.6,90.6,84.4,0,62.1
+Rotterdam,35.8,49.4,70.5,20.0,43.5,62.1,0

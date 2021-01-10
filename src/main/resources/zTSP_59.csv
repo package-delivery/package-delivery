@@ -1,0 +1,9 @@
+CSV,Lackawanna,New Windsor,West Seneca,Queens,Herkimer,Babylon,Oneonta,Garden City
+Lackawanna,0,27.9,85.4,65.4,60.8,61.5,47.6,57.4
+New Windsor,27.9,0,72.8,54.5,36.2,100.0,5.9,55.3
+West Seneca,85.4,72.8,0,56.3,6.7,1.5,65.8,54.4
+Queens,65.4,54.5,56.3,0,16.2,86.7,23.0,95.9
+Herkimer,60.8,36.2,6.7,16.2,0,0.8,87.4,98.3
+Babylon,61.5,100.0,1.5,86.7,0.8,0,71.7,31.3
+Oneonta,47.6,5.9,65.8,23.0,87.4,71.7,0,58.6
+Garden City,57.4,55.3,54.4,95.9,98.3,31.3,58.6,0

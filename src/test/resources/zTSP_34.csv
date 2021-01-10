@@ -1,2 +1,10 @@
-CSV,Oneida
-Oneida,0
+CSV,Amsterdam,Rensselaer,Brooklyn,West Seneca,Southampton,Hammondsport,White Plains,Tonawanda,North Hempstead
+Amsterdam,0,84.6,85.1,99.7,82.6,64.3,13.7,95.1,25.7
+Rensselaer,84.6,0,74.1,42.7,2.5,28.5,24.1,82.0,39.8
+Brooklyn,85.1,74.1,0,26.0,30.2,85.9,17.3,23.4,4.8
+West Seneca,99.7,42.7,26.0,0,79.5,71.2,36.6,23.6,87.7
+Southampton,82.6,2.5,30.2,79.5,0,22.4,37.9,74.6,41.7
+Hammondsport,64.3,28.5,85.9,71.2,22.4,0,86.9,16.6,96.4
+White Plains,13.7,24.1,17.3,36.6,37.9,86.9,0,20.8,38.9
+Tonawanda,95.1,82.0,23.4,23.6,74.6,16.6,20.8,0,88.3
+North Hempstead,25.7,39.8,4.8,87.7,41.7,96.4,38.9,88.3,0

@@ -1,0 +1,6 @@
+CSV,Mount Vernon,Troy,Stony Point,Bedford,Southampton
+Mount Vernon,0,42.9,73.5,52.0,16.6
+Troy,42.9,0,88.8,53.2,95.5
+Stony Point,73.5,88.8,0,38.9,22.9
+Bedford,52.0,53.2,38.9,0,61.6
+Southampton,16.6,95.5,22.9,61.6,0

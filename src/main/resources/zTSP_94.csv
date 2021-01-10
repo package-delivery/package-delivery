@@ -1,0 +1,7 @@
+CSV,Hyde Park,White Plains,Sag Harbor,New Windsor,Rochester,Lake Placid
+Hyde Park,0,46.7,56.8,17.2,40.2,18.9
+White Plains,46.7,0,83.6,11.8,72.9,70.9
+Sag Harbor,56.8,83.6,0,3.4,23.8,56.2
+New Windsor,17.2,11.8,3.4,0,58.0,43.0
+Rochester,40.2,72.9,23.8,58.0,0,10.9
+Lake Placid,18.9,70.9,56.2,43.0,10.9,0

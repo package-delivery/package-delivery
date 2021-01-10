@@ -1,0 +1,8 @@
+CSV,Stony Point,Rochester,Corning,Forest Hills,Gloversville,Stony Brook,Geneva
+Stony Point,0,29.5,16.8,14.6,81.1,86.7,11.3
+Rochester,29.5,0,53.3,6.5,93.7,19.9,28.7
+Corning,16.8,53.3,0,97.3,68.0,38.9,91.6
+Forest Hills,14.6,6.5,97.3,0,83.0,74.6,4.2
+Gloversville,81.1,93.7,68.0,83.0,0,51.1,22.3
+Stony Brook,86.7,19.9,38.9,74.6,51.1,0,0.4
+Geneva,11.3,28.7,91.6,4.2,22.3,0.4,0

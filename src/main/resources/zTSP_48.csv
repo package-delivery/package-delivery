@@ -1,0 +1,9 @@
+CSV,Utica,Saratoga Springs,Ilion,Cheektowaga,Hudson,Great Neck,Southampton,Middletown
+Utica,0,17.5,8.5,87.4,63.4,8.2,25.3,20.5
+Saratoga Springs,17.5,0,22.3,31.0,26.9,35.8,16.5,36.6
+Ilion,8.5,22.3,0,78.6,0.3,57.4,60.9,35.3
+Cheektowaga,87.4,31.0,78.6,0,65.3,1.0,76.0,4.2
+Hudson,63.4,26.9,0.3,65.3,0,20.2,54.6,95.6
+Great Neck,8.2,35.8,57.4,1.0,20.2,0,15.7,19.2
+Southampton,25.3,16.5,60.9,76.0,54.6,15.7,0,68.6
+Middletown,20.5,36.6,35.3,4.2,95.6,19.2,68.6,0

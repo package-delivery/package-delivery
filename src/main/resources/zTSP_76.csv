@@ -1,0 +1,7 @@
+CSV,East Hampton,Niagara Falls,Rochester,Geneva,Ogdensburg,Southampton
+East Hampton,0,12.0,37.0,97.5,3.8,38.8
+Niagara Falls,12.0,0,23.7,66.9,54.0,66.6
+Rochester,37.0,23.7,0,32.5,64.7,0.8
+Geneva,97.5,66.9,32.5,0,61.2,4.9
+Ogdensburg,3.8,54.0,64.7,61.2,0,73.3
+Southampton,38.8,66.6,0.8,4.9,73.3,0

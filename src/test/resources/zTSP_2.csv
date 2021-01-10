@@ -1,1 +1,5 @@
-CSV
+CSV,Scarsdale,Coney Island,Cortland,Woodstock
+Scarsdale,0,35.3,28.3,95.3
+Coney Island,35.3,0,87.5,62.0
+Cortland,28.3,87.5,0,94.1
+Woodstock,95.3,62.0,94.1,0

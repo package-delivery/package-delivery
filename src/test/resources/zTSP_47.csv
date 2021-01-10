@@ -1,5 +1,9 @@
-CSV,Elmira,Oneida,Plattsburgh,Cheektowaga
-Elmira,0,19.3,76.3,6.8
-Oneida,19.3,0,17.2,13.9
-Plattsburgh,76.3,17.2,0,14.0
-Cheektowaga,6.8,13.9,14.0,0
+CSV,Rye,Cohoes,Flushing,Saratoga Springs,North Hempstead,East Aurora,Watervliet,Queens
+Rye,0,93.8,86.1,66.7,13.2,39.7,54.0,61.7
+Cohoes,93.8,0,86.2,27.9,86.2,73.6,2.3,9.1
+Flushing,86.1,86.2,0,28.7,29.2,38.4,78.1,72.6
+Saratoga Springs,66.7,27.9,28.7,0,78.1,46.3,34.3,15.2
+North Hempstead,13.2,86.2,29.2,78.1,0,74.1,42.6,95.1
+East Aurora,39.7,73.6,38.4,46.3,74.1,0,69.1,66.5
+Watervliet,54.0,2.3,78.1,34.3,42.6,69.1,0,43.2
+Queens,61.7,9.1,72.6,15.2,95.1,66.5,43.2,0

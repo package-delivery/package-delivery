@@ -1,0 +1,9 @@
+CSV,Oyster Bay,Binghamton,Syracuse,Troy,Newburgh,Scarsdale,Glens Falls,Saranac Lake
+Oyster Bay,0,90.5,64.7,20.2,38.0,97.2,26.5,47.5
+Binghamton,90.5,0,81.0,9.0,99.6,10.2,37.4,20.9
+Syracuse,64.7,81.0,0,16.6,23.3,55.0,25.5,78.3
+Troy,20.2,9.0,16.6,0,99.8,24.6,62.2,89.7
+Newburgh,38.0,99.6,23.3,99.8,0,89.2,29.9,33.7
+Scarsdale,97.2,10.2,55.0,24.6,89.2,0,27.1,14.7
+Glens Falls,26.5,37.4,25.5,62.2,29.9,27.1,0,38.8
+Saranac Lake,47.5,20.9,78.3,89.7,33.7,14.7,38.8,0

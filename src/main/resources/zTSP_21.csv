@@ -1,0 +1,6 @@
+CSV,Rome,Binghamton,Herkimer,Cooperstown,Buffalo
+Rome,0,12.4,94.5,60.3,97.4
+Binghamton,12.4,0,96.9,6.4,81.8
+Herkimer,94.5,96.9,0,36.4,74.7
+Cooperstown,60.3,6.4,36.4,0,63.1
+Buffalo,97.4,81.8,74.7,63.1,0

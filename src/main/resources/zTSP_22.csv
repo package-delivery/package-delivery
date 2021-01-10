@@ -1,0 +1,7 @@
+CSV,Scarsdale,New York City,Dunkirk,White Plains,Newburgh,Coney Island
+Scarsdale,0,45.6,55.4,61.5,87.4,90.8
+New York City,45.6,0,8.5,23.5,78.1,35.9
+Dunkirk,55.4,8.5,0,87.9,19.2,11.6
+White Plains,61.5,23.5,87.9,0,96.9,43.7
+Newburgh,87.4,78.1,19.2,96.9,0,15.6
+Coney Island,90.8,35.9,11.6,43.7,15.6,0

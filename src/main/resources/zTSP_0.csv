@@ -1,0 +1,8 @@
+CSV,Oneonta,Lake Placid,Newburgh,Watkins Glen,Bedford,Syracuse,Herkimer
+Oneonta,0,86.3,73.9,60.2,95.4,28.8,27.4
+Lake Placid,86.3,0,51.1,50.5,16.6,42.5,27.2
+Newburgh,73.9,51.1,0,72.2,64.7,48.4,23.5
+Watkins Glen,60.2,50.5,72.2,0,53.0,15.1,41.2
+Bedford,95.4,16.6,64.7,53.0,0,92.5,37.4
+Syracuse,28.8,42.5,48.4,15.1,92.5,0,74.9
+Herkimer,27.4,27.2,23.5,41.2,37.4,74.9,0

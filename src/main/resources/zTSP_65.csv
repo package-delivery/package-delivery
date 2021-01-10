@@ -1,0 +1,8 @@
+CSV,Nyack,Tarrytown,Port Washington,White Plains,Hudson,Plattsburgh,Bronx
+Nyack,0,82.9,41.7,71.0,68.6,99.7,20.4
+Tarrytown,82.9,0,30.2,99.6,41.9,79.6,25.9
+Port Washington,41.7,30.2,0,32.1,50.3,66.6,9.3
+White Plains,71.0,99.6,32.1,0,76.3,26.1,22.6
+Hudson,68.6,41.9,50.3,76.3,0,76.9,37.0
+Plattsburgh,99.7,79.6,66.6,26.1,76.9,0,71.2
+Bronx,20.4,25.9,9.3,22.6,37.0,71.2,0

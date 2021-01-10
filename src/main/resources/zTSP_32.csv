@@ -1,0 +1,7 @@
+CSV,Elmira,Port Washington,Coney Island,Beacon,West Seneca,New Rochelle
+Elmira,0,63.3,56.3,42.1,65.7,68.0
+Port Washington,63.3,0,86.1,82.9,54.8,58.2
+Coney Island,56.3,86.1,0,32.1,70.4,96.6
+Beacon,42.1,82.9,32.1,0,59.3,48.3
+West Seneca,65.7,54.8,70.4,59.3,0,96.0
+New Rochelle,68.0,58.2,96.6,48.3,96.0,0

@@ -1,0 +1,8 @@
+CSV,Ilion,Palmyra,Fredonia,Ticonderoga,Troy,Gloversville,Rochester
+Ilion,0,88.3,77.0,77.4,4.1,24.8,57.3
+Palmyra,88.3,0,34.1,60.7,65.5,98.4,23.4
+Fredonia,77.0,34.1,0,71.1,29.3,8.0,42.5
+Ticonderoga,77.4,60.7,71.1,0,87.7,75.1,0.1
+Troy,4.1,65.5,29.3,87.7,0,30.2,2.2
+Gloversville,24.8,98.4,8.0,75.1,30.2,0,93.0
+Rochester,57.3,23.4,42.5,0.1,2.2,93.0,0

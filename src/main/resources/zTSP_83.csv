@@ -1,0 +1,8 @@
+CSV,West Seneca,Staten Island,Olean,Lake Placid,Schenectady,Nyack,Niagara Falls
+West Seneca,0,85.6,87.3,18.3,77.8,4.3,21.0
+Staten Island,85.6,0,67.4,68.4,52.4,57.6,52.3
+Olean,87.3,67.4,0,84.1,62.0,33.3,19.2
+Lake Placid,18.3,68.4,84.1,0,7.7,17.2,60.4
+Schenectady,77.8,52.4,62.0,7.7,0,53.4,30.6
+Nyack,4.3,57.6,33.3,17.2,53.4,0,26.6
+Niagara Falls,21.0,52.3,19.2,60.4,30.6,26.6,0

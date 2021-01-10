@@ -1,0 +1,8 @@
+CSV,Utica,Ilion,Johnstown,Gloversville,Southampton,Hyde Park,Poughkeepsie
+Utica,0,78.9,25.0,74.5,2.1,44.4,15.8
+Ilion,78.9,0,12.3,30.0,72.8,13.6,53.2
+Johnstown,25.0,12.3,0,92.0,88.2,48.9,31.7
+Gloversville,74.5,30.0,92.0,0,23.2,20.6,19.8
+Southampton,2.1,72.8,88.2,23.2,0,54.8,91.1
+Hyde Park,44.4,13.6,48.9,20.6,54.8,0,75.6
+Poughkeepsie,15.8,53.2,31.7,19.8,91.1,75.6,0

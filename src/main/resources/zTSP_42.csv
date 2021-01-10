@@ -1,0 +1,6 @@
+CSV,Southampton,Middletown,North Hempstead,Flushing,Mount Vernon
+Southampton,0,32.1,43.7,52.9,56.1
+Middletown,32.1,0,38.2,49.5,25.0
+North Hempstead,43.7,38.2,0,57.2,95.9
+Flushing,52.9,49.5,57.2,0,53.0
+Mount Vernon,56.1,25.0,95.9,53.0,0

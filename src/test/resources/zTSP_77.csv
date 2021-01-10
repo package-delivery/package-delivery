@@ -1,3 +1,7 @@
-CSV,Mamaroneck,Ossining
-Mamaroneck,0,92.9
-Ossining,92.9,0
+CSV,Port Washington,Staten Island,Jamestown,Flushing,Rensselaer,Auburn
+Port Washington,0,64.1,91.4,47.8,66.2,55.0
+Staten Island,64.1,0,56.5,14.6,81.4,80.0
+Jamestown,91.4,56.5,0,67.1,71.4,38.9
+Flushing,47.8,14.6,67.1,0,10.1,21.0
+Rensselaer,66.2,81.4,71.4,10.1,0,68.5
+Auburn,55.0,80.0,38.9,21.0,68.5,0

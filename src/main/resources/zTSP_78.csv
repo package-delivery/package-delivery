@@ -1,0 +1,7 @@
+CSV,Gloversville,Plattsburgh,Rensselaer,Ilion,North Hempstead,Watertown
+Gloversville,0,69.0,99.5,16.0,3.9,85.0
+Plattsburgh,69.0,0,6.6,71.1,33.3,9.5
+Rensselaer,99.5,6.6,0,80.2,75.4,56.5
+Ilion,16.0,71.1,80.2,0,78.3,99.3
+North Hempstead,3.9,33.3,75.4,78.3,0,61.4
+Watertown,85.0,9.5,56.5,99.3,61.4,0

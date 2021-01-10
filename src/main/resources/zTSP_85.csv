@@ -1,0 +1,9 @@
+CSV,Port Washington,Fredonia,Kingston,Southampton,Johnstown,Lackawanna,Jamestown,Harlem
+Port Washington,0,22.0,38.8,52.1,1.4,19.0,1.7,47.5
+Fredonia,22.0,0,79.7,12.7,37.0,2.1,40.2,89.6
+Kingston,38.8,79.7,0,71.1,29.8,87.3,14.6,27.8
+Southampton,52.1,12.7,71.1,0,96.8,17.5,6.5,15.4
+Johnstown,1.4,37.0,29.8,96.8,0,51.4,79.3,91.5
+Lackawanna,19.0,2.1,87.3,17.5,51.4,0,6.6,94.1
+Jamestown,1.7,40.2,14.6,6.5,79.3,6.6,0,31.7
+Harlem,47.5,89.6,27.8,15.4,91.5,94.1,31.7,0

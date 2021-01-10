@@ -1,10 +1,4 @@
-CSV,New Windsor,Glens Falls,Mamaroneck,Forest Hills,Elmira,Oneonta,Oyster Bay,Rochester,White Plains
-New Windsor,0,85.2,80.9,2.8,3.5,70.8,64.5,21.9,46.0
-Glens Falls,85.2,0,14.5,16.2,32.2,38.2,58.5,6.4,3.5
-Mamaroneck,80.9,14.5,0,36.9,91.9,88.7,78.3,38.2,30.3
-Forest Hills,2.8,16.2,36.9,0,29.8,87.6,7.8,13.3,28.2
-Elmira,3.5,32.2,91.9,29.8,0,23.7,49.8,16.9,1.4
-Oneonta,70.8,38.2,88.7,87.6,23.7,0,21.2,70.6,74.6
-Oyster Bay,64.5,58.5,78.3,7.8,49.8,21.2,0,21.3,22.2
-Rochester,21.9,6.4,38.2,13.3,16.9,70.6,21.3,0,93.0
-White Plains,46.0,3.5,30.3,28.2,1.4,74.6,22.2,93.0,0
+CSV,Elmira,Amsterdam,Lackawanna
+Elmira,0,48.3,72.2
+Amsterdam,48.3,0,8.0
+Lackawanna,72.2,8.0,0

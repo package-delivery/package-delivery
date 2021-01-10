@@ -1,2 +1,10 @@
-CSV,Woodstock
-Woodstock,0
+CSV,Palmyra,Potsdam,Plattsburgh,Rochester,Rotterdam,Auburn,Utica,Port Washington,Binghamton
+Palmyra,0,96.6,50.3,67.7,75.2,19.0,65.5,47.9,53.4
+Potsdam,96.6,0,8.0,3.6,35.2,85.5,49.6,92.2,38.6
+Plattsburgh,50.3,8.0,0,2.2,81.0,34.9,85.6,11.8,78.1
+Rochester,67.7,3.6,2.2,0,98.9,12.0,58.5,1.7,81.8
+Rotterdam,75.2,35.2,81.0,98.9,0,70.9,57.2,77.4,23.3
+Auburn,19.0,85.5,34.9,12.0,70.9,0,2.1,94.8,69.3
+Utica,65.5,49.6,85.6,58.5,57.2,2.1,0,69.7,76.5
+Port Washington,47.9,92.2,11.8,1.7,77.4,94.8,69.7,0,14.9
+Binghamton,53.4,38.6,78.1,81.8,23.3,69.3,76.5,14.9,0

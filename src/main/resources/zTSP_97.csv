@@ -1,0 +1,5 @@
+CSV,Peekskill,Ithaca,Nyack,Hempstead
+Peekskill,0,7.2,38.4,98.8
+Ithaca,7.2,0,85.3,16.1
+Nyack,38.4,85.3,0,55.5
+Hempstead,98.8,16.1,55.5,0

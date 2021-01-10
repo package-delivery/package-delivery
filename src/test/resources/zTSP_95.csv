@@ -1,5 +1,9 @@
-CSV,Saratoga Springs,Stony Brook,Crown Point,Hempstead
-Saratoga Springs,0,59.2,5.9,68.4
-Stony Brook,59.2,0,74.9,64.6
-Crown Point,5.9,74.9,0,27.7
-Hempstead,68.4,64.6,27.7,0
+CSV,Great Neck,Forest Hills,Oneonta,Oneida,Chautauqua,Saranac Lake,Hyde Park,Albany
+Great Neck,0,91.5,2.1,70.1,77.9,99.8,50.8,33.6
+Forest Hills,91.5,0,36.0,30.8,69.2,82.0,77.2,73.5
+Oneonta,2.1,36.0,0,42.9,16.7,15.9,24.8,66.2
+Oneida,70.1,30.8,42.9,0,0.7,93.6,43.4,2.9
+Chautauqua,77.9,69.2,16.7,0.7,0,91.8,69.8,75.2
+Saranac Lake,99.8,82.0,15.9,93.6,91.8,0,86.3,16.9
+Hyde Park,50.8,77.2,24.8,43.4,69.8,86.3,0,65.5
+Albany,33.6,73.5,66.2,2.9,75.2,16.9,65.5,0

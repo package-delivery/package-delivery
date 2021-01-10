@@ -1,0 +1,7 @@
+CSV,Poughkeepsie,Elmira,Beacon,Syracuse,Palmyra,Cheektowaga
+Poughkeepsie,0,79.7,0.6,73.5,40.6,55.4
+Elmira,79.7,0,27.2,12.8,24.0,34.0
+Beacon,0.6,27.2,0,97.4,99.0,63.8
+Syracuse,73.5,12.8,97.4,0,89.1,71.8
+Palmyra,40.6,24.0,99.0,89.1,0,29.1
+Cheektowaga,55.4,34.0,63.8,71.8,29.1,0

@@ -1,11 +1,7 @@
-CSV,Rome,Corning,Saratoga Springs,Amsterdam,Bedford,Garden City,Peekskill,Oyster Bay,White Plains,Fredonia
-Rome,0,9.2,39.4,93.8,86.2,80.1,2.9,34.3,79.9,45.1
-Corning,9.2,0,13.9,4.5,32.2,28.2,19.8,44.5,62.7,50.2
-Saratoga Springs,39.4,13.9,0,91.3,47.0,55.4,13.6,47.4,72.8,53.0
-Amsterdam,93.8,4.5,91.3,0,47.5,21.4,68.9,14.8,81.2,71.9
-Bedford,86.2,32.2,47.0,47.5,0,31.7,85.6,37.4,26.7,47.2
-Garden City,80.1,28.2,55.4,21.4,31.7,0,45.2,62.5,99.8,33.5
-Peekskill,2.9,19.8,13.6,68.9,85.6,45.2,0,98.0,84.2,27.3
-Oyster Bay,34.3,44.5,47.4,14.8,37.4,62.5,98.0,0,0.0,75.4
-White Plains,79.9,62.7,72.8,81.2,26.7,99.8,84.2,0.0,0,4.6
-Fredonia,45.1,50.2,53.0,71.9,47.2,33.5,27.3,75.4,4.6,0
+CSV,Lake Placid,Rochester,Plattsburgh,Manhattan,Schenectady,Oyster Bay
+Lake Placid,0,53.3,4.2,15.5,46.8,95.6
+Rochester,53.3,0,44.8,29.8,39.1,9.9
+Plattsburgh,4.2,44.8,0,90.1,69.9,9.5
+Manhattan,15.5,29.8,90.1,0,11.1,4.3
+Schenectady,46.8,39.1,69.9,11.1,0,50.3
+Oyster Bay,95.6,9.9,9.5,4.3,50.3,0

@@ -1,0 +1,10 @@
+CSV,Buffalo,Lake Placid,Johnstown,Port Washington,Oyster Bay,Hyde Park,Corning,Watkins Glen,East Aurora
+Buffalo,0,62.4,64.2,59.1,37.6,82.7,21.9,97.5,87.4
+Lake Placid,62.4,0,52.4,27.4,29.5,23.0,15.3,48.0,10.7
+Johnstown,64.2,52.4,0,12.2,4.9,98.1,2.9,79.8,93.5
+Port Washington,59.1,27.4,12.2,0,25.3,21.1,30.7,63.2,49.5
+Oyster Bay,37.6,29.5,4.9,25.3,0,33.9,65.1,0.4,15.7
+Hyde Park,82.7,23.0,98.1,21.1,33.9,0,56.0,62.9,61.4
+Corning,21.9,15.3,2.9,30.7,65.1,56.0,0,85.1,79.2
+Watkins Glen,97.5,48.0,79.8,63.2,0.4,62.9,85.1,0,0.2
+East Aurora,87.4,10.7,93.5,49.5,15.7,61.4,79.2,0.2,0

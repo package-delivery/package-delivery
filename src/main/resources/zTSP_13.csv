@@ -1,0 +1,7 @@
+CSV,Rotterdam,Elmira,Poughkeepsie,Binghamton,Corning,Ogdensburg
+Rotterdam,0,72.4,86.6,21.6,85.5,75.9
+Elmira,72.4,0,58.7,51.4,57.5,38.3
+Poughkeepsie,86.6,58.7,0,24.3,91.4,10.4
+Binghamton,21.6,51.4,24.3,0,3.2,46.8
+Corning,85.5,57.5,91.4,3.2,0,50.9
+Ogdensburg,75.9,38.3,10.4,46.8,50.9,0

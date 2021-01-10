@@ -1,0 +1,8 @@
+CSV,Corning,Watervliet,Rensselaer,New Windsor,Cooperstown,Lockport,Middletown
+Corning,0,94.8,11.7,33.6,1.9,22.0,70.0
+Watervliet,94.8,0,26.4,2.4,55.2,22.2,28.1
+Rensselaer,11.7,26.4,0,77.5,1.6,54.1,16.7
+New Windsor,33.6,2.4,77.5,0,23.0,37.4,19.2
+Cooperstown,1.9,55.2,1.6,23.0,0,91.1,60.5
+Lockport,22.0,22.2,54.1,37.4,91.1,0,5.9
+Middletown,70.0,28.1,16.7,19.2,60.5,5.9,0
