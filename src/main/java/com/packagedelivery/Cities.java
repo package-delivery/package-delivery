@@ -53,10 +53,21 @@ public class Cities {
 
     /**
      * Gets List of cities sorted after the algorithms result
-     * @return ArrayList<Citiy>
+     * @return ArrayList<City>
      */
     public ArrayList<City> getSortedCities() {
         return sortedCities;
+    }
+
+    /**
+     * Gets List of IDs of the sorted Cities
+     * @return ArrayList<Integer>
+     */
+    public ArrayList<Integer> getIDs() {
+        ArrayList<Integer> l = new ArrayList<>();
+        for (City c : sortedCities)
+            l.add(c.getId());
+        return l;
     }
 
     /**

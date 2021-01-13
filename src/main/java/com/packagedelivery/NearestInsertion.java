@@ -94,7 +94,7 @@ public class NearestInsertion implements Algorithm{
      * @param matrix
      * @return the distance of the route as double
      */
-    private static double getWholeDistance(ArrayList<Integer> path, double[][] matrix) {
+    protected static double getWholeDistance(ArrayList<Integer> path, double[][] matrix) {
         double dist = 0;
         for (int i = 0; i < path.size()-1; i++) {
             dist += matrix[path.get(i)][path.get(i+1)];
