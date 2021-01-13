@@ -68,7 +68,7 @@ public class NearestInsertion implements Algorithm{
             for (int i = 1; i < path.size()-1; i++) {
                 ArrayList<Integer> temp = new ArrayList<>(path);
                 temp.add(i, (int) shortestDistance[0]);
-                double tempDistance = getWholeDistance(temp);
+                double tempDistance = getWholeDistance(temp, matrix);
                 if (tempDistance < wholeDistance) {
                     position = i;
                 }
@@ -85,15 +85,16 @@ public class NearestInsertion implements Algorithm{
             sortedCities.add(cities[path.get(i)]);
         }
         this.sortedCities.setSortedCities(sortedCities);
-        this.sortedCities.setDistance(getWholeDistance(path));
+        this.sortedCities.setDistance(getWholeDistance(path, matrix));
     }
 
     /**
      * Calculates the distance of a route and returns it
      * @param path an ArrayList which contains a route.
+     * @param matrix
      * @return the distance of the route as double
      */
-    private double getWholeDistance(ArrayList<Integer> path) {
+    private static double getWholeDistance(ArrayList<Integer> path, double[][] matrix) {
         double dist = 0;
         for (int i = 0; i < path.size()-1; i++) {
             dist += matrix[path.get(i)][path.get(i+1)];
