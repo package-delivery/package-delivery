@@ -88,7 +88,7 @@ public class NearestNeighbor implements Algorithm{
      */
     @Override
     public Cities getResult() {
-        return sortedCities;
+        return new Cities(sortedCities.getDistance(), sortedCities.getSortedCities());
     }
 
 }
