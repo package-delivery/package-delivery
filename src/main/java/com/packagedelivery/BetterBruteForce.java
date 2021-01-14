@@ -74,15 +74,8 @@ public class BetterBruteForce implements Algorithm {
         // Adding start and ending point to calculation
         String s = current+permutation+current;
         double distance = 0;
-        double bestDistance = Double.MAX_VALUE;
-        for (int i = 0; i < (s.length()-1)/2; i++) {
+        for (int i = 0; i < s.length()-1; i++) {
             distance += matrix[s.charAt(i) - '0'][s.charAt(i+1) - '0'];
-            if(distance < bestDistance){
-                bestDistance = distance;
-            }
-            else{
-                continue;
-            }
         }
         // Check if new route is shorter than current best!
         if (distance < currentBest) {
