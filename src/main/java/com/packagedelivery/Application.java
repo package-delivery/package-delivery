@@ -40,7 +40,6 @@ public class Application {
                     BetterBruteForce bbf = new BetterBruteForce(Console.getStartingPosition());
                     System.out.println(bbf.getResult());
                     break;
-
                 case SIMULATED_ANNEALING:
                     SimulatedAnnealing sa = new SimulatedAnnealing(Console.getStartingPosition());
                     System.out.println(sa.getResult());
