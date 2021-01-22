@@ -25,7 +25,7 @@ public class Application {
                     System.out.println(nn.getResult());
                     break;
                 case CONVEX_HULL:
-                    ConvexHull ch = new ConvexHull("[[0, 3], [2, 2], [4, 4]]");
+                    ConvexHull ch = new ConvexHull("[[0, 3], [2, 2], [4, 4], [3, 5]]");
                     System.out.println(ch.getResult());
                     break;
                 case BRUTE_FORCE:
