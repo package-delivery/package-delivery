@@ -1,5 +1,7 @@
 package com.packagedelivery;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 
 public class NearestInsertion implements Algorithm{
@@ -19,6 +21,9 @@ public class NearestInsertion implements Algorithm{
         // Get adjazenz matrix and cities from CSVReader
         matrix = CsvReader.getDistanceMatrix();
         cities = CsvReader.getCityMatrix();
+
+        // start stopwatch
+        Instant starts = Instant.now();
 
         // Check if starting point is in cities and convert start string to id of city
         int current = -1;
@@ -84,6 +89,9 @@ public class NearestInsertion implements Algorithm{
         for (int i = 0; i < path.size(); i++) {
             sortedCities.add(cities[path.get(i)]);
         }
+
+        Instant ends = Instant.now();
+        this.sortedCities.setTime(Duration.between(starts, ends).toMillis());
         this.sortedCities.setSortedCities(sortedCities);
         this.sortedCities.setDistance(getWholeDistance(path, matrix));
     }

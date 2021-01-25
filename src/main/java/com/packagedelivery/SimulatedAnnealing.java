@@ -1,5 +1,8 @@
 package com.packagedelivery;
 
+import java.time.Duration;
+import java.time.Instant;
+
 public class SimulatedAnnealing implements Algorithm {
 
     private double currentRoute;
@@ -11,6 +14,10 @@ public class SimulatedAnnealing implements Algorithm {
      * @param start name of the starting position
      */
     public SimulatedAnnealing(String start) {
+
+        // start stopwatch
+        Instant starts = Instant.now();
+
         NearestNeighbor nn = new NearestNeighbor(start);
         double[][] matrix = CsvReader.getDistanceMatrix();
         bestRoute = nn.getResult();
@@ -38,6 +45,9 @@ public class SimulatedAnnealing implements Algorithm {
             // Reduce sigma
             sigma = sigma * (1 - 0.00005);
         }
+
+        Instant ends = Instant.now();
+        this.bestRoute.setTime(Duration.between(starts, ends).toMillis());
     }
 
     /**
