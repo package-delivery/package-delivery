@@ -10,6 +10,8 @@ public class BruteForce implements Algorithm {
     private double currentBest = Double.MAX_VALUE;
     private String currentBestRoute = "";
     private int current;
+    private int counterPrefix;
+    private long facCities;
 
     /**
      * Constructor, which calculates the best route.
@@ -40,6 +42,8 @@ public class BruteForce implements Algorithm {
             initialPath += cities[i].getId();
         }
         // Now we start our recursive bruteforce calculation
+        counterPrefix = 0;
+        facCities = factorial(cities.length-1);
         permutation("", initialPath);
 
         // We got the best possible route
@@ -59,11 +63,25 @@ public class BruteForce implements Algorithm {
     //calculates permutations
     private void permutation(String prefix, String str) {
         int n = str.length();
-        if (n == 0) calculate(prefix);
+        if (n == 0) {
+            //only returns at half the factorial cities, so that paths dont get calculated twice
+            if(counterPrefix >= facCities/2){
+                return;
+            }
+            counterPrefix++;
+            calculate(prefix);
+        }
         else {
             for (int i = 0; i < n; i++)
                 permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1, n));
         }
+    }
+
+    public static long factorial(int number) {
+        if (number < 0) {
+            throw new ArithmeticException(number + " is negative");
+        }
+        return number == 0 || number == 1 ? 1 : number * factorial(number - 1);
     }
 
     /**
@@ -79,7 +97,7 @@ public class BruteForce implements Algorithm {
         }
         // Check if new route is shorter than current best!
         if (distance < currentBest) {
-            System.out.println(distance);
+            //System.out.println(distance);
             currentBest = distance;
             currentBestRoute = s;
         }
