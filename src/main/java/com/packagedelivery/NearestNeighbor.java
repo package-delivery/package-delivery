@@ -97,4 +97,9 @@ public class NearestNeighbor implements Algorithm{
         return new Cities(sortedCities.getDistance(), sortedCities.getSortedCities());
     }
 
+    @Override
+    public String getVisualization() {
+        return null;
+    }
+
 }

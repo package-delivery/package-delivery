@@ -118,4 +118,9 @@ public class NearestInsertion implements Algorithm{
     public Cities getResult() {
         return this.sortedCities;
     }
+
+    @Override
+    public String getVisualization() {
+        return null;
+    }
 }

@@ -114,4 +114,9 @@ public class BruteForce implements Algorithm {
         return bestDistance;
     }
 
+    @Override
+    public String getVisualization() {
+        return null;
+    }
+
 }

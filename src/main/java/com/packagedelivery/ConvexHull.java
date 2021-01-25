@@ -58,4 +58,9 @@ public class ConvexHull implements Algorithm{
     public Cities getResult() {
         return null;
     }
+
+    @Override
+    public String getVisualization() {
+        return null;
+    }
 }

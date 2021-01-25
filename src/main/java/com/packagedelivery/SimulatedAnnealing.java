@@ -89,4 +89,9 @@ public class SimulatedAnnealing implements Algorithm {
     public Cities getResult() {
         return bestRoute;
     }
+
+    @Override
+    public String getVisualization() {
+        return null;
+    }
 }
