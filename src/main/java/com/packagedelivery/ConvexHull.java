@@ -1,6 +1,7 @@
 package com.packagedelivery;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class ConvexHull implements Algorithm{
 
@@ -13,10 +14,6 @@ public class ConvexHull implements Algorithm{
             coords[i][0] = Double.parseDouble(buf[0]);
             coords[i][1] = Double.parseDouble(buf[1]);
         }
-
-        //for (int i = 0; i < coords.length; i++)
-        //    System.out.println(coords[i][0]+ " "+ coords[i][1]);
-
         double min = Double.MAX_VALUE;
         int position = -1;
         for (int i = 0; i < coords.length; i++) {
@@ -25,30 +22,36 @@ public class ConvexHull implements Algorithm{
                 position = i;
             }
         }
-
-        System.out.println(Arrays.toString(coords[position]));
-        double[] point = new double[2];
-        System.arraycopy(coords[position],0,point,0,2);
-        do {
-            double minAngle = Double.MAX_VALUE;
-            int posAngle = -1;
-            for (int i = 0; i < coords.length; i++) {
-                if (coords[i][0]==point[0]&&coords[i][1]==point[1]) continue;
-                double b = Math.abs(coords[i][0] - point[0]);
-                double c = Math.abs(coords[i][1] - point[1]);
-                double erg = Math.asin(b / (Math.sqrt(b * b + c * c)));
-                if (minAngle > erg) {
-                    minAngle = erg;
-                    posAngle = i;
-                }
-                //System.out.println(b);
-                //System.out.println(c);
-                //System.out.println(erg);
+        TreeMap<Double, double[]> sortedPoints = new TreeMap<>();
+        sortedPoints.put(0.0, coords[position]);
+        for (int i = 0; i < coords.length; i++) {
+            if (i == position) continue;
+            double b = coords[i][0] - coords[position][0];
+            double c = coords[i][1] - coords[position][1];
+            double erg = Math.atan(c/b);
+            if (erg < 0) erg += Math.PI;
+            sortedPoints.put(erg, coords[i]);
+        }
+        ArrayList<double[]> hull = new ArrayList<>();
+        ArrayList<double[]> sortedPoints2 = new ArrayList<>();
+        for (double d : sortedPoints.keySet())
+            sortedPoints2.add(sortedPoints.get(d));
+        hull.add(sortedPoints2.get(0));
+        hull.add(sortedPoints2.get(1));
+        for (int i = 2; i < sortedPoints2.size(); i++) {
+            while (!clock(hull.get(hull.size()-2), hull.get(hull.size()-1), sortedPoints2.get(i))) {
+                hull.remove(hull.size()-1);
             }
-            System.arraycopy(coords[posAngle],0,point,0,2);
-            System.out.println(point[0]+" "+point[1]);
+            hull.add(sortedPoints2.get(i));
+        }
 
-        } while(coords[position][0]!=point[0]&&coords[position][1]!=point[1]);
+        for (int i = 0; i < hull.size(); i++) {
+            System.out.println(hull.get(i)[0]+" "+hull.get(i)[1]);
+        }
+    }
+
+    private boolean clock(double[] a, double[] b, double[] c) {
+        return (b[0]-a[0])*(c[1]-a[1]) - (b[1]-a[1])*(c[0]-a[0]) >= 0;
     }
 
     @Override
