@@ -1,5 +1,7 @@
 package com.packagedelivery;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 
 public class NearestNeighbor implements Algorithm{
@@ -16,6 +18,9 @@ public class NearestNeighbor implements Algorithm{
         // get com.project.City array and adjazenzmatrix
         double[][] matrix = CsvReader.getDistanceMatrix();
         City[] cities = CsvReader.getCityMatrix();
+
+        // start stopwatch
+        Instant starts = Instant.now();
 
         // Check if start city is a city in the csv file
         boolean contains = false;
@@ -55,7 +60,8 @@ public class NearestNeighbor implements Algorithm{
         for (int i = 0; i < path.size(); i++) {
             sortedCities.add(cities[path.get(i)]);
         }
-
+        Instant ends = Instant.now();
+        this.sortedCities.setTime(Duration.between(starts, ends).toNanos());
         this.sortedCities.setSortedCities(sortedCities);
         this.sortedCities.setDistance(distance);
     }
