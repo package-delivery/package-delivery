@@ -12,12 +12,15 @@ public class NearestInsertion implements Algorithm{
     private Cities sortedCities = new Cities();
 
 
+    public NearestInsertion(String start) {
+        this(start, false);
+    }
     /**
      * Constructor, which calculates the best nearest insertion route.
      * Important: It is a heuristic algorithm, therefore the result won't be optimal.
      * @param start name of the starting position
      */
-    public NearestInsertion(String start) {
+    public NearestInsertion(String start, boolean visualization) {
         // Get adjazenz matrix and cities from CSVReader
         matrix = CsvReader.getDistanceMatrix();
         cities = CsvReader.getCityMatrix();

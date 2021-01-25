@@ -8,12 +8,16 @@ public class SimulatedAnnealing implements Algorithm {
     private double currentRoute;
     Cities bestRoute;
 
+    public SimulatedAnnealing(String start) {
+        this(start, false);
+    }
+
     /**
      * Constructor, which anneals the optimal route.
      * Important: It is a heuristic algorithm, therefore the result won't be optimal and the algorithm is based on randomness so the result won't always be the same.
      * @param start name of the starting position
      */
-    public SimulatedAnnealing(String start) {
+    public SimulatedAnnealing(String start, boolean visualization) {
 
         // start stopwatch
         Instant starts = Instant.now();

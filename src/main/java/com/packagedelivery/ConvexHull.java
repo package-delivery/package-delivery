@@ -5,7 +5,11 @@ import java.util.TreeMap;
 
 public class ConvexHull implements Algorithm{
 
-    public ConvexHull(String s) {
+    public ConvexHull(String start) {
+        this(start, false);
+    }
+
+    public ConvexHull(String s, boolean visualization) {
         String[] points = s.replaceAll("\\[", "").split("], ");
         points[points.length-1] = points[points.length-1].replaceAll("]]", "");
         double[][] coords = new double[points.length][2];
