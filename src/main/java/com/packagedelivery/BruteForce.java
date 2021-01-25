@@ -66,9 +66,11 @@ public class BruteForce implements Algorithm {
         if (n == 0) {
             //only returns at half the factorial cities, so that paths dont get calculated twice
             if(counterPrefix >= facCities/2){
+                System.out.println("prefix after half: " + prefix);
                 return;
             }
             counterPrefix++;
+            System.out.println("prefix before half: " + prefix);
             calculate(prefix);
         }
         else {

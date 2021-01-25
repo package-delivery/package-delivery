@@ -19,6 +19,7 @@ public class Application {
         if(algoName.isEmpty()) {
             System.err.println("No Algorithm found");
         }else{
+            long startTime = System.nanoTime();
             switch(algoName.get()) {
                 case NEAREST_NEIGHBOR:
                     NearestNeighbor nn = new NearestNeighbor(Console.getStartingPosition());
