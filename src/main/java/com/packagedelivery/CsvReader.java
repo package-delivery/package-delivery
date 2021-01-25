@@ -37,7 +37,7 @@ public abstract class CsvReader {
 
         try{
             //Reads values of CSV file and splits the lines into own parts in array
-            String[] lines = Files.readString(Paths.get("src/main/resources/" + filename)).split("\n");
+            String[] lines = Files.readString(Paths.get("src/main/resources/" + filename)).trim().split("\n");
 
             //initializes com.project.City array
             cityMatrix = new City[lines.length];
