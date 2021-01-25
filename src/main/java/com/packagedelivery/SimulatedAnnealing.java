@@ -3,7 +3,7 @@ package com.packagedelivery;
 import java.time.Duration;
 import java.time.Instant;
 
-public class SimulatedAnnealing implements Algorithm {
+public class SimulatedAnnealing implements Algorithm, Displayable {
 
     private double currentRoute;
     Cities bestRoute;

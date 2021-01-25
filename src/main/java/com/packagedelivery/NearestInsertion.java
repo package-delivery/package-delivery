@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 
-public class NearestInsertion implements Algorithm{
+public class NearestInsertion implements Algorithm, Displayable {
 
     private ArrayList<Integer> path;
     private double[][] matrix;

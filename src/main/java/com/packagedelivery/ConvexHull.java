@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.TreeMap;
 
-public class ConvexHull implements Algorithm{
+public class ConvexHull implements Algorithm, Displayable{
 
     class Point {
         protected double x, y;

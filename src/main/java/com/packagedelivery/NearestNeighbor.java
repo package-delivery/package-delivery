@@ -88,7 +88,6 @@ public class NearestNeighbor implements Algorithm{
                 position = i;
             }
         }
-        //distance += diff;
         return new double[]{position, diff};
     }
 
@@ -99,11 +98,6 @@ public class NearestNeighbor implements Algorithm{
     @Override
     public Cities getResult() {
         return new Cities(sortedCities.getDistance(), sortedCities.getSortedCities());
-    }
-
-    @Override
-    public String getVisualization() {
-        return null;
     }
 
 }
