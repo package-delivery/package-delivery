@@ -10,8 +10,7 @@ public abstract class Console {
         System.out.println("[2] Brute Force");
         System.out.println("[3] Convex Hull");
         System.out.println("[4] Nearest Insertion");
-        System.out.println("[5] Better Brute Force");
-        System.out.println("[6] Simulated Annealing");
+        System.out.println("[5] Simulated Annealing");
         Scanner s = new Scanner(System.in);
         String input = s.nextLine();
         if(input.equals("1")){
@@ -23,8 +22,6 @@ public abstract class Console {
         }else if(input.equals("4")) {
             return Optional.of(AlgorithmName.NEAREST_INSERTION);
         }else if(input.equals("5")) {
-            return Optional.of(AlgorithmName.BETTER_BRUTE_FORCE);
-        }else if(input.equals("6")) {
             return Optional.of(AlgorithmName.SIMULATED_ANNEALING);
         }else {
             return Optional.empty();

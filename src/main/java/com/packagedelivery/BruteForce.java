@@ -1,76 +1,97 @@
 package com.packagedelivery;
-import java.util.ArrayList; // import the ArrayList class
 
-public class BruteForce implements Algorithm{
+import java.util.ArrayList;
 
-    private static ArrayList<String> permutationsArray = new ArrayList<>();
-    private static ArrayList<City> sortedCities;
+public class BruteForce implements Algorithm {
 
-    //to add: break if curr path is longer that old path
+    private double[][] matrix;
+    private City[] cities;
+    private Cities bestDistance = new Cities();
+    private double currentBest = Double.MAX_VALUE;
+    private String currentBestRoute = "";
+    private int current;
 
-    //1 has to be added to the initialisation because we need to return home
-    //private static City [] citiesArray = new City[CsvReader.getCityMatrix().length + 1];
-    private Cities finalCity = new Cities();
+    /**
+     * Constructor, which calculates the best route.
+     * This algorithm tries all routes, therefore the result will be optimal.
+     * @param start name of the starting position
+     */
 
+    public BruteForce(String start) {
+        matrix = CsvReader.getDistanceMatrix();
+        cities = CsvReader.getCityMatrix();
+
+        // Check if starting point is in cities and convert start string to id of city
+        current = -1;
+        for (int i = 0; i < cities.length; i++) {
+            if (start.equals(cities[i].getCityName())) {
+                current = cities[i].getId();
+                break;
+            }
+        }
+        if (current == -1) {
+            System.out.println("Es ist zu einem Fehler gekommen, die eingegebene Startposition befindet sich nicht in der Adjazenzmatrix!");
+            return;
+        }
+        // Create the initial path as String
+        String initialPath = "";
+        for (int i = 0; i < cities.length; i++) {
+            if (cities[i].getId() == current) continue;
+            initialPath += cities[i].getId();
+        }
+        // Now we start our recursive bruteforce calculation
+        permutation("", initialPath);
+
+        // We got the best possible route
+        ArrayList<City> sortedCities = new ArrayList<>();
+        for (int i = 0; i < currentBestRoute.length(); i++) {
+            sortedCities.add(cities[currentBestRoute.charAt(i)-'0']);
+        }
+        bestDistance.setDistance(currentBest);
+        bestDistance.setSortedCities(sortedCities);
+    }
+
+    /**
+     * Recursive algorithm which calculates all possibilities
+     * @param prefix
+     * @param str
+     */
     //calculates permutations
-    private static void permutation(String prefix, String str) {
+    private void permutation(String prefix, String str) {
         int n = str.length();
-        if (n == 0) permutationsArray.add(prefix);
+        if (n == 0) calculate(prefix);
         else {
             for (int i = 0; i < n; i++)
                 permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i+1, n));
         }
     }
 
-    //gets ID from city as String and changes it to the actual city Object
-    private static void setSortedCities(String bestRoute) {
-        City[] cities = CsvReader.getCityMatrix();
-        sortedCities = new ArrayList<>();
-        for (int i = 0; i < bestRoute.length(); i++) {
-            sortedCities.add(cities[Integer.parseInt(String.valueOf(bestRoute.charAt(i)))]);
-        }
-    }
-
-    @Override
-    public Cities getResult(){
-
+    /**
+     * Takes a path as String, calculates if it is better than the current best path and remembers it.
+     * @param permutation a path as String
+     */
+    private void calculate(String permutation) {
+        // Adding start and ending point to calculation
+        String s = current+permutation+current;
         double distance = 0;
-        double bestDistance = Double.MAX_VALUE;
-        String bestPath = "";
-        String initialPath = "";
-
-        //Writes each City object to matching part in array
-        for(int i = 0; i < CsvReader.getCityMatrix().length; i++){
-            initialPath += CsvReader.getCityMatrix()[i].getId();
+        for (int i = 0; i < s.length()-1; i++) {
+            distance += matrix[s.charAt(i) - '0'][s.charAt(i+1) - '0'];
         }
-
-        //sets starting point to last place in array, so the distance home gets returned too
-        initialPath += CsvReader.getCityMatrix()[0].getId();
-
-        permutation("", initialPath.substring(1, initialPath.length()-1));
-
-        //to add "home" to permutationsArray
-        for(int i = 0; i < permutationsArray.size(); i++){
-            permutationsArray.set(i, initialPath.charAt(0) + permutationsArray.get(i) + initialPath.charAt(0));
+        // Check if new route is shorter than current best!
+        if (distance < currentBest) {
+            System.out.println(distance);
+            currentBest = distance;
+            currentBestRoute = s;
         }
-
-        for (String s : permutationsArray) {
-            //System.out.println(permutationsArray.get(i));
-            for (int j = 0; j < s.length() - 1; j++) {
-                distance += CsvReader.getDistanceMatrix()[Integer.parseInt(String.valueOf(s.charAt(j)))][Integer.parseInt(String.valueOf(s.charAt(j + 1)))];
-            }
-            //System.out.println(distance);
-            if (distance < bestDistance) {
-                bestDistance = distance;
-                bestPath = s;
-            }
-            distance = 0;
-        }
-
-        setSortedCities(bestPath);
-        finalCity.setDistance(bestDistance);
-        finalCity.setSortedCities(sortedCities);
-
-        return finalCity;
     }
+
+    /**
+     * Returns a Cities obejct with the best possible path
+     * @return Cities object
+     */
+    @Override
+    public Cities getResult() {
+        return bestDistance;
+    }
+
 }

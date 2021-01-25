@@ -28,17 +28,13 @@ public class Application {
                     ConvexHull ch = new ConvexHull("[[0, 3], [2, 2], [4, 4], [3, 5], [2.088, 5.209], [2.56, 3.95], [1.548, 2.961], [1.559, 3.995], [0.683, 5.12], [0.885, 4.467]]");
                     System.out.println(ch.getResult());
                     break;
-                case BRUTE_FORCE:
-                    BruteForce bf = new BruteForce();
-                    System.out.println(bf.getResult());
-                    break;
                 case NEAREST_INSERTION:
                     NearestInsertion ni = new NearestInsertion(Console.getStartingPosition());
                     System.out.println(ni.getResult());
                     break;
-                case BETTER_BRUTE_FORCE:
-                    BetterBruteForce bbf = new BetterBruteForce(Console.getStartingPosition());
-                    System.out.println(bbf.getResult());
+                case BRUTE_FORCE:
+                    BruteForce bf = new BruteForce(Console.getStartingPosition());
+                    System.out.println(bf.getResult());
                     break;
                 case SIMULATED_ANNEALING:
                     SimulatedAnnealing sa = new SimulatedAnnealing(Console.getStartingPosition());
