@@ -40,7 +40,8 @@ public class ConvexHull implements Algorithm, Displayable{
         }
     }
 
-    public Cities sortedCities;
+    private Cities sortedCities;
+    private String visualized;
 
     public ConvexHull(String start) {
         this(start, false);
@@ -50,6 +51,8 @@ public class ConvexHull implements Algorithm, Displayable{
 
         // start stopwatch
         Instant starts = Instant.now();
+
+        if (visualization) visualized = "";
 
         String[] points = s.replaceAll("\\[", "").split("],");
         points[points.length-1] = points[points.length-1].replaceAll("]]", "");
@@ -81,11 +84,22 @@ public class ConvexHull implements Algorithm, Displayable{
             sortedPoints2.add(sortedPoints.get(angle));
         hull.add(sortedPoints2.get(0));
         hull.add(sortedPoints2.get(1));
+        if (visualization) visualized += hull.toString() + "\n";
+
         for (int i = 2; i < sortedPoints2.size(); i++) {
             while (!clock(hull.get(hull.size()-2), hull.get(hull.size()-1), sortedPoints2.get(i))) {
                 hull.remove(hull.size()-1);
+                if (visualization) visualized += hull.toString() + "\n";
             }
             hull.add(sortedPoints2.get(i));
+            if (visualization) visualized += hull.toString() + "\n";
+        }
+
+        if (visualization) {
+            ArrayList<Point> buf = new ArrayList<>(hull);
+            buf.add(sortedPoints2.get(0));
+            visualized += buf.toString() + "\n";
+            buf = null;
         }
 
         while (hull.size() < sortedPoints2.size()) {
@@ -111,7 +125,15 @@ public class ConvexHull implements Algorithm, Displayable{
                 }
             }
             hull.add(insertionIndex, pointToInsert);
+            if (visualization) {
+                ArrayList<Point> buf = new ArrayList<>(hull);
+                buf.add(sortedPoints2.get(0));
+                visualized += buf.toString() + "\n";
+                buf = null;
+            }
         }
+
+        hull.add(sortedPoints2.get(0));
 
         // Calculate the final distance and the Cities array
         this.sortedCities = new Cities();
@@ -141,6 +163,6 @@ public class ConvexHull implements Algorithm, Displayable{
 
     @Override
     public String getVisualization() {
-        return null;
+        return visualized;
     }
 }

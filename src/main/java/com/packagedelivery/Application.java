@@ -26,7 +26,8 @@ public class Application {
                     System.out.println(nn.getResult());
                     break;
                 case CONVEX_HULL:
-                    ConvexHull ch = new ConvexHull("[[0,3],[2,2],[4,4],[3,5],[2.088,5.209],[2.56,3.95],[1.548,2.961],[1.559,3.995],[0.683,5.12],[0.885,4.467]]");
+                    ConvexHull ch = new ConvexHull("[[0,3],[2,2],[4,4],[3,5],[2.088,5.209],[2.56,3.95],[1.548,2.961],[1.559,3.995],[0.683,5.12],[0.885,4.467]]", false);
+                    //System.out.println(ch.getVisualization());
                     System.out.println(ch.getResult());
                     break;
                 case NEAREST_INSERTION:
@@ -38,7 +39,7 @@ public class Application {
                     System.out.println(bf.getResult());
                     break;
                 case SIMULATED_ANNEALING:
-                    SimulatedAnnealing sa = new SimulatedAnnealing(Console.getStartingPosition(), true);
+                    SimulatedAnnealing sa = new SimulatedAnnealing(Console.getStartingPosition(), false);
                     System.out.println(sa.getResult());
                     //System.out.println(sa.getVisualization());
                     break;
