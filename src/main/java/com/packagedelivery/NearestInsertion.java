@@ -10,7 +10,7 @@ public class NearestInsertion implements Algorithm, Displayable {
     private double[][] matrix;
     private City[] cities;
     private Cities sortedCities = new Cities();
-
+    private String visualized;
 
     public NearestInsertion(String start) {
         this(start, false);
@@ -24,6 +24,8 @@ public class NearestInsertion implements Algorithm, Displayable {
         // Get adjazenz matrix and cities from CSVReader
         matrix = CsvReader.getDistanceMatrix();
         cities = CsvReader.getCityMatrix();
+
+        if (visualization) visualized = "";
 
         // start stopwatch
         Instant starts = Instant.now();
@@ -83,9 +85,12 @@ public class NearestInsertion implements Algorithm, Displayable {
             }
             path.add(position, (int) shortestDistance[0]);
             // We added one element to our cycle and we perform the same steps now, until our cycle contains all the nodes given in the CSV file
+            if (visualization) {
+                for (int i = 0; i < path.size(); i++)
+                    visualized += cities[path.get(i)].getCityName() + ",";
+                visualized += "\n";
+            }
         }
-        //System.out.println(path);
-        //System.out.println(getWholeDistance(path));
 
         // The cycle is finished now and we convert the Integers back to the String names
         ArrayList<City> sortedCities = new ArrayList<>();
@@ -124,6 +129,6 @@ public class NearestInsertion implements Algorithm, Displayable {
 
     @Override
     public String getVisualization() {
-        return null;
+        return this.visualized;
     }
 }
