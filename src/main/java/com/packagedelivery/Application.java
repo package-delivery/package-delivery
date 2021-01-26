@@ -38,8 +38,9 @@ public class Application {
                     System.out.println(bf.getResult());
                     break;
                 case SIMULATED_ANNEALING:
-                    SimulatedAnnealing sa = new SimulatedAnnealing(Console.getStartingPosition());
+                    SimulatedAnnealing sa = new SimulatedAnnealing(Console.getStartingPosition(), true);
                     System.out.println(sa.getResult());
+                    //System.out.println(sa.getVisualization());
                     break;
             }
         }

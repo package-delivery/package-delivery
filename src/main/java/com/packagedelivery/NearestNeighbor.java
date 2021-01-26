@@ -9,16 +9,12 @@ public class NearestNeighbor implements Algorithm{
     private ArrayList<Integer> path;
     private Cities sortedCities = new Cities();
 
-    public NearestNeighbor(String start) {
-        this(start, false);
-    }
-
     /**
      * Constructor, which calculates the best nearest neighbor route.
      * Important: It is a heuristic algorithm, therefore the result won't be optimal.
      * @param start name of the starting position
      */
-    public NearestNeighbor(String start, boolean visualization) {
+    public NearestNeighbor(String start) {
         // get com.project.City array and adjazenzmatrix
         double[][] matrix = CsvReader.getDistanceMatrix();
         City[] cities = CsvReader.getCityMatrix();

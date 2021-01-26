@@ -6,7 +6,8 @@ import java.time.Instant;
 public class SimulatedAnnealing implements Algorithm, Displayable {
 
     private double currentRoute;
-    Cities bestRoute;
+    private Cities bestRoute;
+    private String visualized;
 
     public SimulatedAnnealing(String start) {
         this(start, false);
@@ -22,11 +23,14 @@ public class SimulatedAnnealing implements Algorithm, Displayable {
         // start stopwatch
         Instant starts = Instant.now();
 
+        if (visualization) visualized = "";
+
         NearestNeighbor nn = new NearestNeighbor(start);
         double[][] matrix = CsvReader.getDistanceMatrix();
         bestRoute = nn.getResult();
         Cities route = nn.getResult();
         currentRoute = nn.getResult().getDistance();
+        int breakpoint = 0, v = 0, mod = 1;
         double sigma = 1000;
         while (sigma > 1) {
             // Calculate 2 random cities
@@ -44,12 +48,30 @@ public class SimulatedAnnealing implements Algorithm, Displayable {
             if (!checkNewRoute(route, sigma, matrix)) {
                 route.getSortedCities().set(i1, r1);
                 route.getSortedCities().set(i2, r2);
+                breakpoint++;
+               // if (breakpoint >= 250) break; // THIS CAN BE UNCOMMENTED IF YOU WANT TO MAKE THE ALGO FASTER, BUT NOT BETTER!
+            } else {
+                //System.out.println(breakpoint);
+                breakpoint = 0;
+                v++;
+                if (visualization && v%mod==0) {
+                    // Add Cities to visualized string
+                    //visualized += route.getSortedCities().toString() + "\n";
+                    for (City c : route.getSortedCities())
+                        visualized += c.getCityName()+",";
+                    visualized += "\n";
+
+                    if (v > 10000) mod = 1000;
+                    else if (v > 1000) mod = 100;
+                    else if (v > 100) mod = 10;
+                }
             }
 
             // Reduce sigma
             sigma = sigma * (1 - 0.00005);
-        }
 
+        }
+        System.out.println(visualized);
         Instant ends = Instant.now();
         this.bestRoute.setTime(Duration.between(starts, ends).toMillis());
     }
@@ -96,6 +118,6 @@ public class SimulatedAnnealing implements Algorithm, Displayable {
 
     @Override
     public String getVisualization() {
-        return null;
+        return visualized;
     }
 }
