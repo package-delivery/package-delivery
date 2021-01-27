@@ -51,9 +51,14 @@ public class NearestInsertion implements Algorithm, Displayable{
         // Now we add the nearest neighbor to the path
         // We can use the static method getNearest which we also used in NearestNeighbor algorithm
         path.add((int) NearestNeighbor.getNearest(0, matrix, path)[0]);
-        // Now we add again the starting position, because that is also the end position
-        //path.add(current);
         // We have now our first small cycle, now we have to add new nodes to it, until we included all of them
+
+        if (visualization) {
+            ArrayList<Integer> buf = new ArrayList<>(path);
+            buf.add(current);
+            visualized += intListToString(buf) + "\n";
+            buf = null;
+        }
 
         while (path.size() < matrix.length) {
             double overallMinCost = Double.MAX_VALUE;
@@ -83,9 +88,16 @@ public class NearestInsertion implements Algorithm, Displayable{
             }
             // Add point to path
             path.add(insertionIndex, pointToInsert);
+
+            if (visualization) {
+                ArrayList<Integer> buf = new ArrayList<>(path);
+                buf.add(current);
+                visualized += intListToString(buf) + "\n";
+                buf = null;
+            }
+
         }
         path.add(current);
-        //System.out.println(NearestInsertion.getWholeDistance(path, matrix));
         // Calculate final Cities object
         ArrayList<City> sortedCities = new ArrayList<>();
         for (Integer id : path)
@@ -119,6 +131,12 @@ public class NearestInsertion implements Algorithm, Displayable{
         return dist;
     }
 
+    private String intListToString(ArrayList<Integer> l) {
+        String r = "";
+        for (Integer i : l) r += cities[i] + ",";
+        return r;
+    }
+
     /**
      * Return Cities object
      * @return Cities object with nearest insertion route
@@ -130,6 +148,6 @@ public class NearestInsertion implements Algorithm, Displayable{
 
     @Override
     public String getVisualization() {
-        return null;
+        return this.visualized;
     }
 }
