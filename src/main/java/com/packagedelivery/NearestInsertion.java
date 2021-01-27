@@ -4,24 +4,25 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 
-public class NearestInsertion implements Algorithm, Displayable {
+public class NearestInsertion implements Algorithm, Displayable{
 
-    private ArrayList<Integer> path;
     private double[][] matrix;
     private City[] cities;
-    private Cities sortedCities = new Cities();
     private String visualized;
+
+    private ArrayList<Integer> path;
+    private Cities sortedCities;
 
     public NearestInsertion(String start) {
         this(start, false);
     }
+
     /**
      * Constructor, which calculates the best nearest insertion route.
      * Important: It is a heuristic algorithm, therefore the result won't be optimal.
      * @param start name of the starting position
      */
     public NearestInsertion(String start, boolean visualization) {
-        // Get adjazenz matrix and cities from CSVReader
         matrix = CsvReader.getDistanceMatrix();
         cities = CsvReader.getCityMatrix();
 
@@ -32,9 +33,9 @@ public class NearestInsertion implements Algorithm, Displayable {
 
         // Check if starting point is in cities and convert start string to id of city
         int current = -1;
-        for (int i = 0; i < cities.length; i++) {
-            if (start.equals(cities[i].getCityName())) {
-                current = cities[i].getId();
+        for (City city : cities) {
+            if (start.equals(city.getCityName())) {
+                current = city.getId();
                 break;
             }
         }
@@ -51,57 +52,57 @@ public class NearestInsertion implements Algorithm, Displayable {
         // We can use the static method getNearest which we also used in NearestNeighbor algorithm
         path.add((int) NearestNeighbor.getNearest(0, matrix, path)[0]);
         // Now we add again the starting position, because that is also the end position
-        path.add(0);
+        //path.add(current);
         // We have now our first small cycle, now we have to add new nodes to it, until we included all of them
 
-        while(path.size() <= matrix.length) {
-            // Get the closest distance of some node outside the cycle, to one node which is already in the cycle
-            // 0 index = city index of node outside cycle
-            // 1 index = the distance to a node inside cycle
-            // 2 index = city index of node inside cycle
-            double[] shortestDistance = new double[]{-1, Double.MAX_VALUE};
+        while (path.size() < matrix.length) {
+            double overallMinCost = Double.MAX_VALUE;
+            int pointToInsert = -1, insertionIndex = -1;
+            for (int i = 0; i < matrix.length; i++) {
+                if (path.contains(i)) continue;
+                double minCost = Double.MAX_VALUE;
+                int before = -1, after = -1;
 
-            // We got for path.size()-1, because last element is same element as element on 0 index (start=end position)
-            for (int i = 0; i < path.size() - 1; i++) {
-                double[] result = NearestNeighbor.getNearest(path.get(i), matrix, path);
-                if (result[1] < shortestDistance[1]) {
-                    shortestDistance[0] = result[0];
-                    shortestDistance[1] = result[1];
+                // Find segment in hull before -> after that minimizes cost for cost(before -> p) + cost(p -> after) - cost(before -> after)
+                for (int x = 0; x < path.size() - 1; x++) {
+                    double currentCost = cost(path.get(x), cities[i].getId()) + cost(cities[i].getId(), path.get(x + 1)) - cost(path.get(x), path.get(x + 1));
+                    if (currentCost < minCost) {
+                        minCost = currentCost;
+                        before = path.get(x);
+                        after = path.get(x + 1);
+                    }
+                }
+
+                // Find point that minimizes cost for (before -> p -> after) / cost(before -> after)
+                double overallCurrentCost = (cost(before, cities[i].getId()) + cost(cities[i].getId(), after)) / cost(before, after);
+                if (overallCurrentCost < overallMinCost) {
+                    overallMinCost = overallCurrentCost;
+                    pointToInsert = cities[i].getId();
+                    insertionIndex = path.indexOf(after);
                 }
             }
-
-            // In our shortestResult we got now the index of the city and the shortest distance of a city outside the cycle to a city inside the cycle.
-            // Now we have to find out where to place it in our cycle to make the new cycle as short as possible
-
-            double wholeDistance = Double.MAX_VALUE;
-            int position = -1;
-            for (int i = 1; i < path.size()-1; i++) {
-                ArrayList<Integer> temp = new ArrayList<>(path);
-                temp.add(i, (int) shortestDistance[0]);
-                double tempDistance = getWholeDistance(temp, matrix);
-                if (tempDistance < wholeDistance) {
-                    position = i;
-                }
-            }
-            path.add(position, (int) shortestDistance[0]);
-            // We added one element to our cycle and we perform the same steps now, until our cycle contains all the nodes given in the CSV file
-            if (visualization) {
-                for (int i = 0; i < path.size(); i++)
-                    visualized += cities[path.get(i)].getCityName() + ",";
-                visualized += "\n";
-            }
+            // Add point to path
+            path.add(insertionIndex, pointToInsert);
         }
-
-        // The cycle is finished now and we convert the Integers back to the String names
+        path.add(current);
+        //System.out.println(NearestInsertion.getWholeDistance(path, matrix));
+        // Calculate final Cities object
         ArrayList<City> sortedCities = new ArrayList<>();
-        for (int i = 0; i < path.size(); i++) {
-            sortedCities.add(cities[path.get(i)]);
-        }
-
+        for (Integer id : path)
+            sortedCities.add(cities[id]);
+        this.sortedCities = new Cities(getWholeDistance(path, matrix), sortedCities);
         Instant ends = Instant.now();
         this.sortedCities.setTime(Duration.between(starts, ends).toMillis());
-        this.sortedCities.setSortedCities(sortedCities);
-        this.sortedCities.setDistance(getWholeDistance(path, matrix));
+    }
+
+    /**
+     * Gives distance between to points in matrix
+     * @param p1
+     * @param p2
+     * @return
+     */
+    private double cost(int p1, int p2) {
+        return matrix[p1][p2];
     }
 
     /**
@@ -129,6 +130,6 @@ public class NearestInsertion implements Algorithm, Displayable {
 
     @Override
     public String getVisualization() {
-        return this.visualized;
+        return null;
     }
 }

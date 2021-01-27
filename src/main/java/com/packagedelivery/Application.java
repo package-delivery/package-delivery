@@ -32,7 +32,7 @@ public class Application {
                     break;
                 case NEAREST_INSERTION:
                     NearestInsertion ni = new NearestInsertion(Console.getStartingPosition(), true);
-                    System.out.println(ni.getVisualization());
+                    //System.out.println(ni.getVisualization());
                     System.out.println(ni.getResult());
                     break;
                 case BRUTE_FORCE:
