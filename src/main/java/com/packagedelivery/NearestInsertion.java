@@ -41,7 +41,7 @@ public class NearestInsertion implements Algorithm, Displayable{
         }
         if (current == -1) {
             System.out.println("Es ist zu einem Fehler gekommen, die eingegebene Startposition befindet sich nicht in der Adjazenzmatrix!");
-            return;
+            System.exit(-1);
         }
 
         // Now we start with the actual algorithm
@@ -133,7 +133,7 @@ public class NearestInsertion implements Algorithm, Displayable{
 
     private String intListToString(ArrayList<Integer> l) {
         String r = "";
-        for (Integer i : l) r += cities[i].getCityName() + ",";
+        for (Integer i : l) r += cities[i].getCityName() + ";";
         return r;
     }
 

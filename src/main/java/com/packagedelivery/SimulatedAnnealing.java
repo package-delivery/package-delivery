@@ -58,7 +58,7 @@ public class SimulatedAnnealing implements Algorithm, Displayable {
                     // Add Cities to visualized string
                     //visualized += route.getSortedCities().toString() + "\n";
                     for (City c : route.getSortedCities())
-                        visualized += c.getCityName()+",";
+                        visualized += c.getCityName()+";";
                     visualized += "\n";
 
                     if (v > 10000) mod = 1000;
@@ -71,7 +71,7 @@ public class SimulatedAnnealing implements Algorithm, Displayable {
             sigma = sigma * (1 - 0.00005);
 
         }
-        System.out.println(visualized);
+
         Instant ends = Instant.now();
         this.bestRoute.setTime(Duration.between(starts, ends).toMillis());
     }

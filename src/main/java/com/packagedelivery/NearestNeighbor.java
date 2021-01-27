@@ -32,7 +32,7 @@ public class NearestNeighbor implements Algorithm{
         }
         if (!contains) {
             System.out.println("Es ist zu einem Fehler gekommen, die eingegebene Startposition befindet sich nicht in der Adjazenzmatrix!");
-            return;
+            System.exit(-1);
         }
 
         // Now we have to convert the start string to the id

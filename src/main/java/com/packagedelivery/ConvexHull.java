@@ -114,15 +114,14 @@ public class ConvexHull implements Algorithm, Displayable{
         // We start creating the convex hull
         hull.add(sortedPoints2.get(0));
         hull.add(sortedPoints2.get(1));
-        if (visualization) visualized += hull.toString() + "\n";
-
+        if (visualization) visualized += pointsToString(hull);
         for (int i = 2; i < sortedPoints2.size(); i++) {
             while (!clock(hull.get(hull.size()-2), hull.get(hull.size()-1), sortedPoints2.get(i))) {
                 hull.remove(hull.size()-1);
-                if (visualization) visualized += hull.toString() + "\n";
+                if (visualization) visualized += pointsToString(hull);
             }
             hull.add(sortedPoints2.get(i));
-            if (visualization) visualized += hull.toString() + "\n";
+            if (visualization) visualized += pointsToString(hull);
         }
         // Hull is finished now
 
@@ -130,7 +129,7 @@ public class ConvexHull implements Algorithm, Displayable{
         if (visualization) {
             ArrayList<Point> buf = new ArrayList<>(hull);
             buf.add(sortedPoints2.get(0));
-            visualized += buf.toString() + "\n";
+            visualized += pointsToString(buf);
             buf = null;
         }
 
@@ -165,7 +164,7 @@ public class ConvexHull implements Algorithm, Displayable{
             if (visualization) {
                 ArrayList<Point> buf = new ArrayList<>(hull);
                 buf.add(sortedPoints2.get(0));
-                visualized += buf.toString() + "\n";
+                visualized += pointsToString(buf);
                 buf = null;
             }
         }
@@ -200,6 +199,10 @@ public class ConvexHull implements Algorithm, Displayable{
      */
     private boolean clock(Point a, Point b, Point c) {
         return (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x) >= 0;
+    }
+
+    private String pointsToString(ArrayList<Point> l) {
+        return l.toString().replaceAll("], ",";").replaceAll(",", "|").replaceAll("[\\[\\]]", "") + "\n";
     }
 
     /**
