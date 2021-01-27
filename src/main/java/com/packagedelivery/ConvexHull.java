@@ -49,7 +49,7 @@ public class ConvexHull implements Algorithm, Displayable{
 
     public ConvexHull(String s, boolean visualization) {
 
-        // start stopwatch
+        //start stopwatch
         Instant starts = Instant.now();
 
         if (visualization) visualized = "";
