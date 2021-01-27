@@ -7,7 +7,9 @@ import java.util.Objects;
 import java.util.TreeMap;
 
 public class ConvexHull implements Algorithm, Displayable{
-
+    /**
+     * Inner class Point with implementation of haversine_distance
+     */
     class Point {
         protected double x, y;
 
@@ -19,8 +21,22 @@ public class ConvexHull implements Algorithm, Displayable{
         }
 
         public double getDistanceTo(Point p) {
-            return Math.sqrt(Math.pow(Math.abs(this.x-p.x), 2) + Math.pow(Math.abs(this.y-p.y), 2));
+            // Radius of the Earth in miles
+            double R = 3958.8;
+            // Convert degrees to radians
+            double rlat1 = this.x * (Math.PI/180);
+            // Convert degrees to radians
+            double rlat2 = p.x * (Math.PI/180);
+            // Radian difference (latitudes)
+            double difflat = rlat2-rlat1;
+            // Radian difference (longitudes)
+            double difflon = (p.y-this.y) * (Math.PI/180);
+            double d =  2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
+            // Convert miles to km
+            return d*1.609;
         }
+
+
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -47,26 +63,37 @@ public class ConvexHull implements Algorithm, Displayable{
         this(start, false);
     }
 
+    /**
+     * constructor which calculates the convex hull route
+     * Important: It is a heuristic algorithm, therefore the result won't be optimal.
+     * @param s Coordinates as string
+     * @param visualization boolean to enable/disable visualization
+     */
     public ConvexHull(String s, boolean visualization) {
 
         //start stopwatch
         Instant starts = Instant.now();
 
+        // Starts visualization
         if (visualization) visualized = "";
 
+        // Splits the string and converts it to ArrayList<Point>
         String[] points = s.replaceAll("\\[", "").split("],");
         points[points.length-1] = points[points.length-1].replaceAll("]]", "");
-
         ArrayList<Point> coords = new ArrayList<>();
         for (int i = 0; i < points.length; i++) {
             String[] buf = points[i].split(",");
             coords.add(new Point(Double.parseDouble(buf[0]), Double.parseDouble(buf[1])));
         }
 
+        // Search the point with the smallest y coordinate
         Point min = new Point(0,Double.MAX_VALUE);
         for (Point p : coords)
             if (p.y < min.y) min = new Point(p.x, p.y);
 
+        // Now we are sorting the points based on there angle to the x-axes
+        // We use an insane useful data structure: TreeMap
+        // and trigonometry
         TreeMap<Double, Point> sortedPoints = new TreeMap<>();
         sortedPoints.put(0.0, min);
         for (Point p : coords) {
@@ -78,10 +105,13 @@ public class ConvexHull implements Algorithm, Displayable{
             sortedPoints.put(erg, p);
         }
 
+        // We put the sorted values into an ArrayList
         ArrayList<Point> hull = new ArrayList<>();
         ArrayList<Point> sortedPoints2 = new ArrayList<>();
         for (double angle : sortedPoints.keySet())
             sortedPoints2.add(sortedPoints.get(angle));
+
+        // We start creating the convex hull
         hull.add(sortedPoints2.get(0));
         hull.add(sortedPoints2.get(1));
         if (visualization) visualized += hull.toString() + "\n";
@@ -94,7 +124,9 @@ public class ConvexHull implements Algorithm, Displayable{
             hull.add(sortedPoints2.get(i));
             if (visualization) visualized += hull.toString() + "\n";
         }
+        // Hull is finished now
 
+        // virtualization
         if (visualization) {
             ArrayList<Point> buf = new ArrayList<>(hull);
             buf.add(sortedPoints2.get(0));
@@ -102,6 +134,8 @@ public class ConvexHull implements Algorithm, Displayable{
             buf = null;
         }
 
+        // Add all remaining points to the hull
+        // The hull gets compressed
         while (hull.size() < sortedPoints2.size()) {
             double overallMinCost = Double.MAX_VALUE;
             Point pointToInsert = new Point(), before = new Point(), after = new Point();
@@ -109,6 +143,7 @@ public class ConvexHull implements Algorithm, Displayable{
             for (Point p : sortedPoints2) {
                 if (hull.contains(p)) continue;
                 double minCost = Double.MAX_VALUE;
+                // Find segment in hull before -> after that minimizes cost for cost(before -> p) + cost(p -> after) - cost(before -> after)
                 for (int i = 0; i < hull.size() - 1; i++) {
                     double currentCost = hull.get(i).getDistanceTo(p) + p.getDistanceTo(hull.get(i + 1)) - hull.get(i).getDistanceTo(hull.get(i + 1));
                     if (currentCost < minCost) {
@@ -117,6 +152,7 @@ public class ConvexHull implements Algorithm, Displayable{
                         after = hull.get(i + 1);
                     }
                 }
+                // Find point that minimizes cost for (before -> p -> after) / cost(before -> after)
                 double overallCurrentCost = (before.getDistanceTo(p) + p.getDistanceTo(after)) / before.getDistanceTo(after);
                 if (overallCurrentCost < overallMinCost) {
                     overallMinCost = overallCurrentCost;
@@ -124,6 +160,7 @@ public class ConvexHull implements Algorithm, Displayable{
                     insertionIndex = hull.indexOf(after);
                 }
             }
+            // Add point to hull
             hull.add(insertionIndex, pointToInsert);
             if (visualization) {
                 ArrayList<Point> buf = new ArrayList<>(hull);
@@ -132,35 +169,52 @@ public class ConvexHull implements Algorithm, Displayable{
                 buf = null;
             }
         }
-
+        // Add starting point to the route as well
         hull.add(sortedPoints2.get(0));
 
         // Calculate the final distance and the Cities array
         this.sortedCities = new Cities();
-        this.sortedCities.setDistance(0.0);
-        ArrayList<City> sortedCities = new ArrayList<>();
-        for (int i = 0; i < hull.size()-1; i++) {
-            sortedCities.add(new City(hull.get(i).toString(), 0));
-            this.sortedCities.setDistance(this.sortedCities.getDistance()+hull.get(i).getDistanceTo(hull.get(i+1)));
-        }
-        sortedCities.add(new City(hull.get(hull.size()-1).toString(), 0));
-        this.sortedCities.setSortedCities(sortedCities);
+        double distance = 0.0;
 
+        ArrayList<City> sortedCities = new ArrayList<>();
+        for (int i = 0; i < hull.size(); i++) {
+            sortedCities.add(new City(hull.get(i).toString(), 0));
+        }
+        this.sortedCities.setSortedCities(sortedCities);
+        for (int i = 0; i < hull.size()-1; i++) {
+            distance += hull.get(i).getDistanceTo(hull.get(i+1));
+        }
+
+        this.sortedCities.setDistance(distance);
         // Set time
         Instant ends = Instant.now();
         this.sortedCities.setTime(Duration.between(starts, ends).toMillis());
     }
 
+    /**
+     * Calculates the cross product of three vectors, returns false if it is negative, true otherwise
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
     private boolean clock(Point a, Point b, Point c) {
         return (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x) >= 0;
     }
 
-
+    /**
+     * Returns Cities object
+     * @return Cities object with convex hull route
+     */
     @Override
     public Cities getResult() {
         return this.sortedCities;
     }
 
+    /**
+     * Returns a string with for visualization on the website
+     * @return
+     */
     @Override
     public String getVisualization() {
         return visualized;
