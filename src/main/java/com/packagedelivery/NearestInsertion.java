@@ -133,7 +133,7 @@ public class NearestInsertion implements Algorithm, Displayable{
 
     private String intListToString(ArrayList<Integer> l) {
         String r = "";
-        for (Integer i : l) r += cities[i] + ",";
+        for (Integer i : l) r += cities[i].getCityName() + ",";
         return r;
     }
 
