@@ -36,8 +36,9 @@ public class Application {
                     System.out.println(ni.getResult());
                     break;
                 case BRUTE_FORCE:
-                    BruteForce bf = new BruteForce(Console.getStartingPosition());
-                    System.out.println(bf.getResult());
+                    //BruteForce bf = new BruteForce(Console.getStartingPosition());
+                    BetterBruteForce bbf = new BetterBruteForce(Console.getStartingPosition());
+                    System.out.println(bbf.getResult());
                     break;
                 case SIMULATED_ANNEALING:
                     SimulatedAnnealing sa = new SimulatedAnnealing(Console.getStartingPosition(), false);
