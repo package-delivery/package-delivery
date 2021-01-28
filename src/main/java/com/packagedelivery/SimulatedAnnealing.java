@@ -28,6 +28,10 @@ public class SimulatedAnnealing implements Algorithm, Displayable {
         NearestNeighbor nn = new NearestNeighbor(start);
         double[][] matrix = CsvReader.getDistanceMatrix();
         bestRoute = nn.getResult();
+
+        // With less than 2 points this algo makes no sense
+        if (bestRoute.getSortedCities().size() <= 3) return;
+
         Cities route = nn.getResult();
         currentRoute = nn.getResult().getDistance();
         int breakpoint = 0, v = 0, mod = 1;
