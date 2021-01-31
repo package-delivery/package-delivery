@@ -26,7 +26,7 @@ public class Application {
                     System.out.println(nn.getResult());
                     break;
                 case CONVEX_HULL:
-                    ConvexHull ch = new ConvexHull("[[0,3],[2,2],[4,4],[3,5],[2.088,5.209],[2.56,3.95],[1.548,2.961],[1.559,3.995],[0.683,5.12],[0.885,4.467]]", false);
+                    ConvexHull ch = new ConvexHull("[[2.36,7.93],[4.74,8.47],[6.74,5.79],[2.1,3.29],[12,2.43],[8.94,2.87],[10.94,6.19],[11.48,11.87]]", true);
                     System.out.println(ch.getVisualization());
                     System.out.println(ch.getResult());
                     break;

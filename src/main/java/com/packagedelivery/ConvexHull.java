@@ -125,17 +125,15 @@ public class ConvexHull implements Algorithm, Displayable{
         }
         // Hull is finished now
 
+
+        hull.add(sortedPoints2.get(0));
         // virtualization
         if (visualization) {
-            ArrayList<Point> buf = new ArrayList<>(hull);
-            buf.add(sortedPoints2.get(0));
-            visualized += pointsToString(buf);
-            buf = null;
+            visualized += pointsToString(hull);
         }
-
         // Add all remaining points to the hull
         // The hull gets compressed
-        while (hull.size() < sortedPoints2.size()) {
+        while (hull.size() <= sortedPoints2.size()) {
             double overallMinCost = Double.MAX_VALUE;
             Point pointToInsert = new Point(), before = new Point(), after = new Point();
             int insertionIndex = -1;
@@ -151,25 +149,26 @@ public class ConvexHull implements Algorithm, Displayable{
                         after = hull.get(i + 1);
                     }
                 }
+
                 // Find point that minimizes cost for (before -> p -> after) / cost(before -> after)
                 double overallCurrentCost = (before.getDistanceTo(p) + p.getDistanceTo(after)) / before.getDistanceTo(after);
                 if (overallCurrentCost < overallMinCost) {
                     overallMinCost = overallCurrentCost;
                     pointToInsert = p;
                     insertionIndex = hull.indexOf(after);
+                    // Edge case
+                    if (insertionIndex == 0)
+                        insertionIndex = hull.size()-1;
                 }
             }
             // Add point to hull
             hull.add(insertionIndex, pointToInsert);
             if (visualization) {
-                ArrayList<Point> buf = new ArrayList<>(hull);
-                buf.add(sortedPoints2.get(0));
-                visualized += pointsToString(buf);
-                buf = null;
+                visualized += pointsToString(hull);
             }
         }
         // Add starting point to the route as well
-        hull.add(sortedPoints2.get(0));
+        //hull.add(sortedPoints2.get(0));
 
         // Calculate the final distance and the Cities array
         this.sortedCities = new Cities();
@@ -181,10 +180,7 @@ public class ConvexHull implements Algorithm, Displayable{
         }
         this.sortedCities.setSortedCities(sortedCities);
         for (int i = 0; i < hull.size()-1; i++) {
-            System.out.println(hull.get(i));
-            System.out.println(hull.get(i+1));
             distance += hull.get(i).getDistanceTo(hull.get(i+1));
-            System.out.println(distance);
         }
 
         this.sortedCities.setDistance(distance);
