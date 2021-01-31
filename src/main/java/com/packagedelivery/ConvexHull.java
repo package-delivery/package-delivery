@@ -33,7 +33,7 @@ public class ConvexHull implements Algorithm, Displayable{
             double difflon = (p.y-this.y) * (Math.PI/180);
             double d =  2 * R * Math.asin(Math.sqrt(Math.sin(difflat/2)*Math.sin(difflat/2)+Math.cos(rlat1)*Math.cos(rlat2)*Math.sin(difflon/2)*Math.sin(difflon/2)));
             // Convert miles to km
-            return d*1.609;
+            return d*1.609344;
         }
 
 
@@ -181,7 +181,10 @@ public class ConvexHull implements Algorithm, Displayable{
         }
         this.sortedCities.setSortedCities(sortedCities);
         for (int i = 0; i < hull.size()-1; i++) {
+            System.out.println(hull.get(i));
+            System.out.println(hull.get(i+1));
             distance += hull.get(i).getDistanceTo(hull.get(i+1));
+            System.out.println(distance);
         }
 
         this.sortedCities.setDistance(distance);
