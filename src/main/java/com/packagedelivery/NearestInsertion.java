@@ -51,16 +51,15 @@ public class NearestInsertion implements Algorithm, Displayable{
         // Now we add the nearest neighbor to the path
         // We can use the static method getNearest which we also used in NearestNeighbor algorithm
         path.add((int) NearestNeighbor.getNearest(0, matrix, path)[0]);
+        // Start point is also ending point
+        path.add(current);
         // We have now our first small cycle, now we have to add new nodes to it, until we included all of them
 
         if (visualization) {
-            ArrayList<Integer> buf = new ArrayList<>(path);
-            buf.add(current);
-            visualized += intListToString(buf) + "\n";
-            buf = null;
+            visualized += intListToString(path) + "\n";
         }
 
-        while (path.size() < matrix.length) {
+        while (path.size() <= matrix.length) {
             double overallMinCost = Double.MAX_VALUE;
             int pointToInsert = -1, insertionIndex = -1;
             for (int i = 0; i < matrix.length; i++) {
@@ -84,20 +83,17 @@ public class NearestInsertion implements Algorithm, Displayable{
                     overallMinCost = overallCurrentCost;
                     pointToInsert = cities[i].getId();
                     insertionIndex = path.indexOf(after);
+                    if (insertionIndex == 0)
+                        insertionIndex = path.size()-1;
                 }
             }
             // Add point to path
             path.add(insertionIndex, pointToInsert);
 
             if (visualization) {
-                ArrayList<Integer> buf = new ArrayList<>(path);
-                buf.add(current);
-                visualized += intListToString(buf) + "\n";
-                buf = null;
+                visualized += intListToString(path) + "\n";
             }
-
         }
-        path.add(current);
         // Calculate final Cities object
         ArrayList<City> sortedCities = new ArrayList<>();
         for (Integer id : path)
