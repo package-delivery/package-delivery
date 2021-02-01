@@ -3,7 +3,14 @@ package com.packagedelivery;
 import java.util.Optional;
 import java.util.Scanner;
 
+/**
+ * Implements all the Console activities
+ */
 public abstract class Console {
+    /**
+     * Asks use via console which algorithm they want to use
+     * @return Optional of AlgorithmName with the algorithm selected
+     */
     public static Optional<AlgorithmName> getSelectedAlgorithm() {
         System.out.println("Select Algorithm:");
         System.out.println("[1] Nearest Neighbor");
@@ -27,16 +34,25 @@ public abstract class Console {
             return Optional.empty();
         }
     }
+
+    /**
+     * Asks the user to select a starting point
+     * @return String with the starting point
+     */
     public static String getStartingPosition() {
         System.out.println("In welcher Stadt möchten Sie starten?");
         Scanner s = new Scanner(System.in);
         return s.nextLine();
     }
+
+    /**
+     * Asks the user to insert filename of dataset
+     * @return String filename of the data
+     */
     public static String getFilename() {
         System.out.println("Input filename:");
         Scanner s = new Scanner(System.in);
         String input = s.nextLine();
-        // TODO: Check if file exists
         return input;
     }
 }

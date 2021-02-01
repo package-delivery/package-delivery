@@ -4,6 +4,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 
+/**
+ * Nearest Insertion Algorithm implemented
+ */
 public class NearestInsertion implements Algorithm, Displayable{
 
     private double[][] matrix;

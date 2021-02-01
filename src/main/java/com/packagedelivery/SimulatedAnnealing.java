@@ -3,12 +3,19 @@ package com.packagedelivery;
 import java.time.Duration;
 import java.time.Instant;
 
+/**
+ * Simulated Annealing implemented
+ */
 public class SimulatedAnnealing implements Algorithm, Displayable {
 
     private double currentRoute;
     private Cities bestRoute;
     private String visualized;
 
+    /**
+     * If visualization is not specified, default to false
+     * @param start name of the starting position
+     */
     public SimulatedAnnealing(String start) {
         this(start, false);
     }
@@ -17,6 +24,7 @@ public class SimulatedAnnealing implements Algorithm, Displayable {
      * Constructor, which anneals the optimal route.
      * Important: It is a heuristic algorithm, therefore the result won't be optimal and the algorithm is based on randomness so the result won't always be the same.
      * @param start name of the starting position
+     * @param visualization if on, generates the visualization assets
      */
     public SimulatedAnnealing(String start, boolean visualization) {
 

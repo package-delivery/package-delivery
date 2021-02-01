@@ -3,17 +3,26 @@ package com.packagedelivery;
 import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Contains the result of the Algorithm with calculated distance and cities in order
+ */
 public class Cities {
     private double distance;
     private double time;
     private ArrayList<City> sortedCities;
 
     /**
-     * Constructors for Cities
+     * Default constructor for cities
      */
     public Cities() {
         this(0.0, null);
     }
+
+    /**
+     * Constructor
+     * @param distance Calculated distance
+     * @param sortedCities Array with all the City Objects in right order
+     */
     public Cities(double distance, ArrayList<City> sortedCities) {
         this.distance = distance;
         this.sortedCities = sortedCities;
@@ -29,7 +38,7 @@ public class Cities {
 
     /**
      * Sets the distance that the algorithm has chosen (the algorithm calls this function)
-     * @param distance
+     * @param distance Distance in km
      */
     public void setDistance(double distance) {
         this.distance = distance;
@@ -45,7 +54,7 @@ public class Cities {
 
     /**
      * Sets time that the algorithm used (used internally by the algo)
-     * @param time
+     * @param time Time in ms
      */
     public void setTime(double time) {
         this.time = time;
@@ -53,7 +62,7 @@ public class Cities {
 
     /**
      * Gets List of cities sorted after the algorithms result
-     * @return ArrayList<City>
+     * @return ArrayList City
      */
     public ArrayList<City> getSortedCities() {
         return sortedCities;
@@ -61,7 +70,7 @@ public class Cities {
 
     /**
      * Gets List of IDs of the sorted Cities
-     * @return ArrayList<Integer>
+     * @return ArrayList Integer
      */
     public ArrayList<Integer> getIDs() {
         ArrayList<Integer> l = new ArrayList<>();
@@ -72,7 +81,7 @@ public class Cities {
 
     /**
      * Sets List of cities sorted after the algorithms result
-     * @param sortedCities<Citiy>
+     * @param sortedCities City
      */
     public void setSortedCities(ArrayList<City> sortedCities) {
         this.sortedCities = sortedCities;
@@ -94,7 +103,7 @@ public class Cities {
 
     /**
      * HashCode method needed for ArrayLists (generated with IntelliJ)
-     * @return
+     * @return Hash of the object
      */
     @Override
     public int hashCode() {
