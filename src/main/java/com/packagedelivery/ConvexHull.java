@@ -212,6 +212,11 @@ public class ConvexHull implements Algorithm, Displayable{
         return (b.x-a.x)*(c.y-a.y) - (b.y-a.y)*(c.x-a.x) >= 0;
     }
 
+    /**
+     * Method for visualization
+     * @param l
+     * @return
+     */
     private String pointsToString(ArrayList<Point> l) {
         return l.toString().replaceAll("], ",";").replaceAll(",", "|").replaceAll("[\\[\\]]", "") + "\n";
     }

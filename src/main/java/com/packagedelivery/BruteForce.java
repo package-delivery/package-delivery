@@ -12,6 +12,10 @@ public class BruteForce implements Algorithm{
     private Cities bestDistance = new Cities();
     private int current, iteration, facCities;
 
+    /**
+     * Constructor, which calculates the best possible route.
+     * @param start starting position as string
+     */
     public BruteForce(String start) {
         matrix = CsvReader.getDistanceMatrix();
         cities = CsvReader.getCityMatrix();
@@ -42,6 +46,11 @@ public class BruteForce implements Algorithm{
         permute(firstPermutation, 0);
     }
 
+    /**
+     * recursive algorithm to calculate all permutations
+     * @param arr
+     * @param k
+     */
     private void permute(java.util.ArrayList<Integer> arr, int k){
         for(int i = k; i < arr.size(); i++){
             java.util.Collections.swap(arr, i, k);
@@ -56,6 +65,10 @@ public class BruteForce implements Algorithm{
         }
     }
 
+    /**
+     * Checks if current calculated route is better than overall best route
+     * @param l
+     */
     private void calculate(ArrayList<Integer> l) {
         ArrayList<Integer> buffer = new ArrayList<>(l);
         buffer.add(0, current);
@@ -66,6 +79,11 @@ public class BruteForce implements Algorithm{
         }
     }
 
+    /**
+     * Converts an ArrayList of IDs to an ArrayList<City>
+     * @param l
+     * @return
+     */
     private ArrayList<City> idsToCities(ArrayList<Integer> l) {
         ArrayList<City> cities = new ArrayList<>();
         for (Integer i : l) {
@@ -74,6 +92,11 @@ public class BruteForce implements Algorithm{
         return cities;
     }
 
+    /**
+     * Recursive algorithm to calculate factorial
+     * @param number
+     * @return
+     */
     public static int factorial(int number) {
         if (number < 0) {
             throw new ArithmeticException(number + " is negative");
@@ -81,6 +104,10 @@ public class BruteForce implements Algorithm{
         return number == 0 || number == 1 ? 1 : number * factorial(number - 1);
     }
 
+    /**
+     * Returns a Cities Object with the best possible route
+     * @return
+     */
     @Override
     public Cities getResult() {
         return bestDistance;
