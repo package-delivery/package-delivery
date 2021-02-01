@@ -4,6 +4,9 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 
+/**
+ * Nearest Neighbor Algorithm implemented
+ */
 public class NearestNeighbor implements Algorithm{
     private double distance;
     private ArrayList<Integer> path;

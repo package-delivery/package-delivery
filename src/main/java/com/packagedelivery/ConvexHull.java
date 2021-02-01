@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.TreeMap;
 
+/**
+ * Implements the ConvexHull algorithm
+ */
 public class ConvexHull implements Algorithm, Displayable{
     /**
      * Inner class Point with implementation of haversine_distance
@@ -20,6 +23,11 @@ public class ConvexHull implements Algorithm, Displayable{
             this.y = y;
         }
 
+        /**
+         * Calculates haversine distance between two points with earth radius
+         * @param p Second point for the comparison
+         * @return distance in km
+         */
         public double getDistanceTo(Point p) {
             // Radius of the Earth in miles
             double R = 3958.8;
@@ -59,8 +67,12 @@ public class ConvexHull implements Algorithm, Displayable{
     private Cities sortedCities;
     private String visualized;
 
-    public ConvexHull(String start) {
-        this(start, false);
+    /**
+     * When no visualization is set, default to false
+     * @param s Coordinates as a string
+     */
+    public ConvexHull(String s) {
+        this(s, false);
     }
 
     /**

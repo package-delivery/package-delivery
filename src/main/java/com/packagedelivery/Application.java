@@ -2,7 +2,14 @@ package com.packagedelivery;
 
 import java.util.Optional;
 
+/**
+ * Main Class for the Console Application
+ */
 public class Application {
+    /**
+     * Main Method
+     * @param args cli parameter
+     */
     public static void main(String[] args) {
 
         boolean validInput = false;

@@ -2,6 +2,9 @@ package com.packagedelivery;
 
 import java.util.ArrayList;
 
+/**
+ * Brute Force Algorithm implemented
+ */
 public class BruteForce implements Algorithm{
 
     private double[][] matrix;

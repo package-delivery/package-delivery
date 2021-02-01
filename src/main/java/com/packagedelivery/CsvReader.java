@@ -5,6 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
+/**
+ * Open, reads and parses Csv Files
+ */
 public abstract class CsvReader {
 
     private static double[][] distanceMatrix;
