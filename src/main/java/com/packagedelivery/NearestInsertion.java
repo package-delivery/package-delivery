@@ -127,6 +127,11 @@ public class NearestInsertion implements Algorithm, Displayable{
         return dist;
     }
 
+    /**
+     * Converts IDs to a string with names of cities for visualization
+     * @param l
+     * @return
+     */
     private String intListToString(ArrayList<Integer> l) {
         String r = "";
         for (Integer i : l) r += cities[i].getCityName() + ";";
