@@ -16,14 +16,14 @@ public class NearestInsertionTest {
             NearestInsertion ni = new NearestInsertion("a");
             Cities result = ni.getResult();
             assertEquals(29, result.getDistance());
-            String expected = "Cities{distance=29.0, time=0.0, sortedCities=[City{cityName='a', id=0}, City{cityName='b', id=1}, City{cityName='c', id=2}, City{cityName='d', id=3}, City{cityName='e', id=4}, City{cityName='a', id=0}]}";
+            String expected = "Cities{distance=29.0, time=0.0, sortedCities=[City{cityName='a', id=0}, City{cityName='e', id=4}, City{cityName='d', id=3}, City{cityName='c', id=2}, City{cityName='b', id=1}, City{cityName='a', id=0}]}";
             assertEquals(expected, result.toString());
 
             //now with another startposition
             ni = new NearestInsertion("c");
             result = ni.getResult();
-            assertEquals(31, result.getDistance());
-            expected = "Cities{distance=31.0, time=0.0, sortedCities=[City{cityName='c', id=2}, City{cityName='a', id=0}, City{cityName='b', id=1}, City{cityName='e', id=4}, City{cityName='d', id=3}, City{cityName='c', id=2}]}";
+            assertEquals(29, result.getDistance());
+            expected = "Cities{distance=29.0, time=0.0, sortedCities=[City{cityName='c', id=2}, City{cityName='b', id=1}, City{cityName='a', id=0}, City{cityName='e', id=4}, City{cityName='d', id=3}, City{cityName='c', id=2}]}";
             assertEquals(expected, result.toString());
 
         }
