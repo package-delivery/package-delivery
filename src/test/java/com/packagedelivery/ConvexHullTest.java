@@ -4,6 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ConvexHullTest {
@@ -11,14 +14,24 @@ public class ConvexHullTest {
     @Nested
     class checkNearestInsertion {
         @Test
-        @DisplayName("Test returns correct ConvexHull values for tobiTsp.csv")
+        @DisplayName("Test returns correct ConvexHull values for first test")
         void checkConvexHullTest() {
-            CsvReader.readCsvFile("tobiTSP.csv");
-            ConvexHull ch = new ConvexHull("[[0,3],[2,2],[4,4],[3,5],[2.088,5.209],[2.56,3.95],[1.548,2.961],[1.559,3.995],[0.683,5.12],[0.885,4.467]]",false);
-            Cities result = ch.getResult();
-            assertEquals(1466.6984435846798, result.getDistance());
-            String expected = ch.getResult().getSortedCities().toString();
-            assertEquals(expected, "[City{cityName='[2.0,2.0]', id=0}, City{cityName='[2.56,3.95]', id=0}, City{cityName='[4.0,4.0]', id=0}, City{cityName='[3.0,5.0]', id=0}, City{cityName='[2.088,5.209]', id=0}, City{cityName='[0.683,5.12]', id=0}, City{cityName='[0.885,4.467]', id=0}, City{cityName='[1.559,3.995]', id=0}, City{cityName='[0.0,3.0]', id=0}, City{cityName='[1.548,2.961]', id=0}, City{cityName='[2.0,2.0]', id=0}]");
+            // Visualisierung auf https://www.geogebra.org/m/mfsbd7fb
+            String coords = "[[5.7249919434758,9.274802780708],[-32.6037232017414,55.6686433744592],[56.1823781267804,53.0725585402919],[-42.4688455715772,-13.3872132143912],[36.7117418705256,-55.7033960113184],[-54.9300527755803,-62.1936080967366],[87.5950046202047,-45.0594481912324],[82.6624434352869,5.0449891081967],[-60.9010478941651,31.78466290012]]";
+            ConvexHull ch = new ConvexHull(coords);
+            assertEquals(44062, ch.getResult().getDistance(), 1);
+            assertEquals(new ArrayList<City>(Arrays.asList(new City("[-54.9300527755803,-62.1936080967366]", 0), new City("[36.7117418705256,-55.7033960113184]" ,0), new City("[87.5950046202047,-45.0594481912324]", 0), new City("[82.6624434352869,5.0449891081967]", 0), new City("[56.1823781267804,53.0725585402919]", 0), new City("[5.7249919434758,9.274802780708]", 0), new City("[-32.6037232017414,55.6686433744592]", 0), new City("[-60.9010478941651,31.78466290012]", 0), new City("[-42.4688455715772,-13.3872132143912]", 0), new City("[-54.9300527755803,-62.1936080967366]", 0))), ch.getResult().getSortedCities());
+        }
+
+        @Test
+        @DisplayName("Test returns correct ConvexHull values for second test")
+        void checkConvexHullTest2() {
+            // Visualisierung auf https://www.geogebra.org/calculator/aavz4gae
+            String coords = "[[-6.9042207982024,-7.609411074344],[28.11586834799,74.2500473048803],[102.9713088979762,146.4789811689018],[108.6620733842324,94.8243496782682],[39.0596462061751,25.6596736145386]]";
+            ConvexHull ch = new ConvexHull(coords);
+            System.out.println(ch.getResult().getSortedCities());
+            assertEquals(31354, ch.getResult().getDistance(), 1);
+            assertEquals(new ArrayList<City>(Arrays.asList(new City("[-6.9042207982024,-7.609411074344]", 0),new City("[39.0596462061751,25.6596736145386]", 0),new City("[108.6620733842324,94.8243496782682]", 0),new City("[102.9713088979762,146.4789811689018]", 0),new City("[28.11586834799,74.2500473048803]", 0),new City("[-6.9042207982024,-7.609411074344]", 0))), ch.getResult().getSortedCities());
         }
     }
 }
