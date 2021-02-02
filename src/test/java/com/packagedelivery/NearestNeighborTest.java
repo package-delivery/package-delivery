@@ -53,33 +53,4 @@ public class NearestNeighborTest {
             assertEquals(expected, result);
         }
     }
-    /*
-    @Nested
-    class RandomTests {
-        @Test
-        @DisplayName("Test returns correct values for 100 random generated csv files")
-        void checkNearestNeighborTest() {
-            Path python = Paths.get("src/main/resources");
-            ProcessBuilder builder = new ProcessBuilder("python", "random_csv_generator.py");
-            builder.directory(new File(String.valueOf(python.toAbsolutePath().toFile())));
-            try {
-                builder.start();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            // Sleep one second, otherwise java is to fast to realize that python created new files
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            // Start with tests
-            for (int i = 0; i < 100; i++) {
-                CsvReader.readCsvFile("zTSP_"+i+".csv");
-                NearestNeighbor nn = new NearestNeighbor(CsvReader.getCityMatrix()[0].getCityName());
-                Reference ref = new Reference();
-                assertEquals(ref.reference().getDistance(), nn.getResult().getDistance(), 0.000001, "Failed for file zTSP_"+i+".csv");
-            }
-        }
-    }*/
 }

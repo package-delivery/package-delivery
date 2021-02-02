@@ -55,4 +55,14 @@ public abstract class Console {
         String input = s.nextLine();
         return input;
     }
+
+    public static String getCoordinates() {
+        System.out.println("Input Coordinates for ConvexHull:");
+        System.out.println("Example: \"[[2.88,7.93],[4.74,8.47],[6.74,5.79],[2.1,3.29]]\"");
+        Scanner s = new Scanner(System.in);
+        String input = s.nextLine();
+        return input;
+    }
+
+
 }
